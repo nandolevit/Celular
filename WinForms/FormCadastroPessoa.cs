@@ -206,6 +206,13 @@ namespace WinForms
         {
             if (!(string.IsNullOrEmpty(textBoxNome.Text) || string.IsNullOrEmpty(maskedTextBoxCpf.Text)))
             {
+                if (string.IsNullOrEmpty(labelCargoDescricao.Text))
+                {
+                    FormMessage.ShowMessegeWarning("Defina o cargo do funcionário");
+                    buttonBuscarCargo.Select();
+                    return;
+                }
+
                 PreencherFuncInfo();
                 SalvarThread();
 
