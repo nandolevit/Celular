@@ -101,6 +101,10 @@
     <Compile Include="GridViewComissaoInfo.cs" />
     <Compile Include="GridViewVendaPeriodo.cs" />
     <Compile Include="GridViewVendaPeriodoColecao.cs" />
+    <Compile Include="IphoneModeloColecao.cs" />
+    <Compile Include="IphoneModeloCorColecao.cs" />
+    <Compile Include="IphoneModeloCorInfo.cs" />
+    <Compile Include="IphoneModeloInfo.cs" />
     <Compile Include="LoginConvertInfo.cs" />
     <Compile Include="MovEstoqueColecao.cs" />
     <Compile Include="MovEstoqueInfo.cs" />
@@ -145,6 +149,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SangriaColecao.cs" />
     <Compile Include="SangriaInfo.cs" />
+    <Compile Include="ServicoColecao.cs" />
+    <Compile Include="ServicoInfo.cs" />
     <Compile Include="ServicoObsTecInfo.cs" />
     <Compile Include="ServicoObsTecColecao.cs" />
     <Compile Include="ServicoOrcamentoColecao.cs" />

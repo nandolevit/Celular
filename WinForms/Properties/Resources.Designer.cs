@@ -573,6 +573,16 @@ namespace WinForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iphone_6splus_colors {
+            get {
+                object obj = ResourceManager.GetObject("iphone-6splus-colors", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loader2 {
             get {
                 object obj = ResourceManager.GetObject("loader2", resourceCulture);
@@ -596,6 +606,16 @@ namespace WinForms.Properties {
         internal static System.Drawing.Bitmap senhas_post {
             get {
                 object obj = ResourceManager.GetObject("senhas_post", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SP727_iphone6s_plus_gold_select_2015 {
+            get {
+                object obj = ResourceManager.GetObject("SP727-iphone6s-plus-gold-select-2015", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

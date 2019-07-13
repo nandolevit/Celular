@@ -33,6 +33,8 @@ namespace WinForms
         public static ComputerInfo Server { get; set; }
         public static ComputerInfo Computer { get; set; }
         public static UserLoginInfo Login { get; set; } //registra a hora do login e a saída do usuário
+        public static IphoneModeloColecao IphoneColecao { get; set; }
+        public static IphoneModeloCorColecao IphoneCorColecao { get; set; }
 
         public static string Caminho { get { return @"C:\Users\Public\LevitSoft\emp.lvt"; } }
         public static string FileNameEmp { get { return "emp.lvt"; } }
@@ -46,6 +48,7 @@ namespace WinForms
         UserColecao LoginGeral = new UserColecao();
         CaixaNegocios caixaNegocios;
         SerializarNegocios serializarNegocios = new SerializarNegocios(Caminho);
+        ServicoNegocio negocioServ;
         AccessLogin accessLogin;
         UnidadeInfo unidadeInfo;
 
@@ -79,6 +82,10 @@ namespace WinForms
             Empresa = (serializarNegocios.DesserializarObjeto(FileNameEmp) as EmpresaInfo);
             Unidade = (serializarNegocios.DesserializarObjeto(FileNameUnid) as UnidadeInfo);
             Computer = (serializarNegocios.DesserializarObjeto(FileNameComp) as ComputerInfo);
+
+            negocioServ = new ServicoNegocio(Form1.Empresa.empconexao);
+            IphoneColecao = negocioServ.ConsultarIphoneColecao();
+            IphoneCorColecao = negocioServ.ConsultarIphoneModeloCorFoto();
 
             if (Empresa == null || Unidade == null || Computer == null)
                 return false;
@@ -737,6 +744,9 @@ namespace WinForms
 
         private void BuscarServico()
         {
+            FormIphoneModelo formIphoneModelo = new FormIphoneModelo();
+            formIphoneModelo.ShowDialog(this);
+            //FormAbertos(formIphoneModelo);
             //FormConsultarServico formConsultarServico = new FormConsultarServico();
             //FormAbertos(formConsultarServico, true);
         }

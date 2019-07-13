@@ -220,6 +220,12 @@
     <Compile Include="FormFuncConsultar.Designer.cs">
       <DependentUpon>FormFuncConsultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIphoneModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIphoneModelo.Designer.cs">
+      <DependentUpon>FormIphoneModelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLancamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,12 @@
     <Compile Include="FormProdEstoque.Designer.cs">
       <DependentUpon>FormProdEstoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProdutoDefeito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProdutoDefeito.designer.cs">
+      <DependentUpon>FormProdutoDefeito.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProdutoEstoqueDetalhes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +316,12 @@
     </Compile>
     <Compile Include="FormReportViewerCupomSemRodape.Designer.cs">
       <DependentUpon>FormReportViewerCupomSemRodape.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSalvarFotoIphone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSalvarFotoIphone.Designer.cs">
+      <DependentUpon>FormSalvarFotoIphone.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSangria.cs">
       <SubType>Form</SubType>
@@ -341,6 +359,12 @@
     </Compile>
     <Compile Include="FormVendaVip.designer.cs">
       <DependentUpon>FormVendaVip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormServico.designer.cs">
+      <DependentUpon>FormServico.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -404,6 +428,9 @@
     <EmbeddedResource Include="FormFuncConsultar.resx">
       <DependentUpon>FormFuncConsultar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormIphoneModelo.resx">
+      <DependentUpon>FormIphoneModelo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLancamentos.resx">
       <DependentUpon>FormLancamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -428,6 +455,9 @@
     <EmbeddedResource Include="FormProdEstoque.resx">
       <DependentUpon>FormProdEstoque.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProdutoDefeito.resx">
+      <DependentUpon>FormProdutoDefeito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProdutoEstoqueDetalhes.resx">
       <DependentUpon>FormProdutoEstoqueDetalhes.cs</DependentUpon>
     </EmbeddedResource>
@@ -446,6 +476,9 @@
     <EmbeddedResource Include="FormReportViewerCupomSemRodape.resx">
       <DependentUpon>FormReportViewerCupomSemRodape.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSalvarFotoIphone.resx">
+      <DependentUpon>FormSalvarFotoIphone.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSangria.resx">
       <DependentUpon>FormSangria.cs</DependentUpon>
     </EmbeddedResource>
@@ -463,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVendaVip.resx">
       <DependentUpon>FormVendaVip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormServico.resx">
+      <DependentUpon>FormServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -614,6 +650,8 @@
     <None Include="Resources\icons8_Find_User_Male_321.png" />
     <None Include="Resources\icons8_Close_Window_32.png" />
     <None Include="Resources\icons8_Customer_32.png" />
+    <None Include="Resources\iphone-6splus-colors.jpg" />
+    <None Include="Resources\SP727-iphone6s-plus-gold-select-2015.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
