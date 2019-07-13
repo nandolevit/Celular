@@ -41,7 +41,7 @@
             this.labelCapacidade = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxCor = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxImagem = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -73,7 +73,7 @@
             this.textBoxSensores = new System.Windows.Forms.TextBox();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.textBoxCaixa = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).BeginInit();
             this.panelPrincipal.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -218,15 +218,15 @@
             this.comboBoxCor.TabIndex = 13;
             this.comboBoxCor.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCor_SelectedIndexChanged);
             // 
-            // pictureBox1
+            // pictureBoxImagem
             // 
-            this.pictureBox1.Image = global::WinForms.Properties.Resources.SP727_iphone6s_plus_gold_select_2015;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 262);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxImagem.Image = global::WinForms.Properties.Resources.SP727_iphone6s_plus_gold_select_2015;
+            this.pictureBoxImagem.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxImagem.Name = "pictureBoxImagem";
+            this.pictureBoxImagem.Size = new System.Drawing.Size(211, 262);
+            this.pictureBoxImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxImagem.TabIndex = 14;
+            this.pictureBoxImagem.TabStop = false;
             // 
             // labelTitle
             // 
@@ -241,7 +241,7 @@
             // panelPrincipal
             // 
             this.panelPrincipal.Controls.Add(this.tabControl1);
-            this.panelPrincipal.Controls.Add(this.pictureBox1);
+            this.panelPrincipal.Controls.Add(this.pictureBoxImagem);
             this.panelPrincipal.Controls.Add(this.labelTitle);
             this.panelPrincipal.Controls.Add(this.textBoxDetalhes);
             this.panelPrincipal.Controls.Add(this.label1);
@@ -569,7 +569,7 @@
             this.Name = "FormIphoneModelo";
             this.Text = "Modelo do Iphone";
             this.Load += new System.EventHandler(this.FormIphoneModelo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
             this.panelPrincipal.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -612,7 +612,7 @@
         private System.Windows.Forms.Label labelCapacidade;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxCor;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxImagem;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.TabControl tabControl1;

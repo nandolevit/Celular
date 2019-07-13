@@ -40,15 +40,16 @@ namespace WinForms
         public static string FileNameEmp { get { return "emp.lvt"; } }
         public static string FileNameUnid { get { return "unid.lvt"; } }
         public static string FileNameComp { get { return "comp.lvt"; } }
+        public static string FileIphone { get { return "phone.lvt"; } }
+        public static string FileIphoneCores { get { return "phoneCor.lvt"; } }
+
         public static bool encerrarThread;
 
         UserNegocio userNegocio;
         EmpresaNegocios negocioEmp;
         Thread threadLogin;
-        UserColecao LoginGeral = new UserColecao();
         CaixaNegocios caixaNegocios;
         SerializarNegocios serializarNegocios = new SerializarNegocios(Caminho);
-        ServicoNegocio negocioServ;
         AccessLogin accessLogin;
         UnidadeInfo unidadeInfo;
 
@@ -82,12 +83,10 @@ namespace WinForms
             Empresa = (serializarNegocios.DesserializarObjeto(FileNameEmp) as EmpresaInfo);
             Unidade = (serializarNegocios.DesserializarObjeto(FileNameUnid) as UnidadeInfo);
             Computer = (serializarNegocios.DesserializarObjeto(FileNameComp) as ComputerInfo);
+            IphoneColecao = (serializarNegocios.DesserializarObjeto(FileIphone) as IphoneModeloColecao);
+            IphoneCorColecao = (serializarNegocios.DesserializarObjeto(FileIphoneCores) as IphoneModeloCorColecao);
 
-            negocioServ = new ServicoNegocio(Form1.Empresa.empconexao);
-            IphoneColecao = negocioServ.ConsultarIphoneColecao();
-            IphoneCorColecao = negocioServ.ConsultarIphoneModeloCorFoto();
-
-            if (Empresa == null || Unidade == null || Computer == null)
+            if (Empresa == null || Unidade == null || Computer == null || IphoneColecao == null || IphoneCorColecao == null)
                 return false;
             else
                 return true;

@@ -43,6 +43,12 @@ namespace WinForms
             comboBoxModelo.SelectedIndex = -1;
             cod = 1;
 
+            if (colecaoCor == null)
+            {
+                FormMessage.ShowMessegeWarning("O formulário ainda não está pronto, tente mais tarde!");
+                this.DialogResult = DialogResult.Cancel;
+            }
+
         }
 
         private void ComboBoxModelo_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,8 +73,6 @@ namespace WinForms
                     if (cor.modcoridiphone == infoIphone.iphmodid)
                         colecaoCorSelecionada.Add(cor);
                 }
-
-
 
                 labelTitle.Text = infoIphone.iphmoddescricao;
                 textBoxDetalhes.Text = infoIphone.iphmoddetalhes;
@@ -106,10 +110,10 @@ namespace WinForms
             if (foto != null)
             {
                 MemoryStream memoryStream = new MemoryStream(foto);
-                pictureBox1.Image = Image.FromStream(memoryStream);
+                pictureBoxImagem.Image = Image.FromStream(memoryStream);
             }
             else
-                pictureBox1.Image = null;
+                pictureBoxImagem.Image = null;
         }
 
         private string strConver(string[] texto)

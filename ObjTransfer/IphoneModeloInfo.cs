@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ObjTransfer
 {
+    [Serializable]
     public class IphoneModeloInfo
     {
         public int iphmodid { get; set; }

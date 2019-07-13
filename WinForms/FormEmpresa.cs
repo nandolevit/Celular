@@ -22,6 +22,7 @@ namespace WinForms
         ComputerInfo infoComp;
         UnidadeInfo infoUnid;
         UnidadeColecao colecaoUnid;
+        ServicoNegocio negocioServ;
         SerializarNegocios serializarNegocios = new SerializarNegocios(Form1.Caminho);
         bool Ativo;
         string diretorio = @"C:\Users\Public\LevitSoft\";
@@ -245,6 +246,18 @@ namespace WinForms
 
             serializarNegocios.SerializarObjeto(infoUnid, Form1.FileNameUnid);
             serializarNegocios.SerializarObjeto(infoComp, Form1.FileNameComp);
+            ExecutarConsulta();
+        }
+
+
+        private void ExecutarConsulta()
+        {
+            negocioServ = new ServicoNegocio(Form1.Empresa.empconexao);
+            IphoneModeloColecao iphoneModeloColecao = negocioServ.ConsultarIphoneColecao();
+            IphoneModeloCorColecao iphoneCorColecao = negocioServ.ConsultarIphoneModeloCorFoto();
+
+            serializarNegocios.SerializarObjeto(iphoneModeloColecao, Form1.FileIphone);
+            serializarNegocios.SerializarObjeto(iphoneCorColecao, Form1.FileIphoneCores);
         }
 
         private void FormEmpresa_Load(object sender, EventArgs e)

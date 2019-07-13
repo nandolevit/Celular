@@ -21,6 +21,40 @@ namespace Negocios
 
         AccessDbMySql accessDbMySql = new AccessDbMySql();
 
+        public IphoneModeloCorColecao ConsultarIphoneModeloCorFotoId(int id)
+        {
+            if (accessDbMySql.Conectar(EmpConexao))
+            {
+                accessDbMySql.AddParametrosMySql("@phone", id);
+                DataTable dataTable = accessDbMySql.dataTableMySql("spConsultarIphoneModeloCorFotoId");
+
+                if (dataTable != null)
+                {
+                    IphoneModeloCorColecao colecao = new IphoneModeloCorColecao();
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        IphoneModeloCorInfo cor = new IphoneModeloCorInfo
+                        {
+                            modcorfoto = DBNull.Value.Equals(row["modcorfoto"]) ? null : (byte[])row["modcorfoto"],
+                            modcorid = Convert.ToInt32(row["modcorid"]),
+                            modcoridcor = Convert.ToInt32(row["modcoridcor"]),
+                            modcoridiphone = Convert.ToInt32(row["modcoridiphone"]),
+                            iphcordescricao = Convert.ToString(row["iphcordescricao"])
+                        };
+
+                        colecao.Add(cor);
+                    }
+
+                    return colecao;
+                }
+                else
+                    return null;
+            }
+            else
+                return null;
+
+        }
+
         public IphoneModeloCorColecao ConsultarIphoneModeloCorFoto()
         {
             if (accessDbMySql.Conectar(EmpConexao))
@@ -53,6 +87,7 @@ namespace Negocios
                 return null;
 
         }
+
         public int UpdateFotoIphoneModelo(IphoneModeloCorInfo cor)
         {
             if (accessDbMySql.Conectar(EmpConexao))
