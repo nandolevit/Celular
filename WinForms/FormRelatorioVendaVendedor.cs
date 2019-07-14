@@ -230,7 +230,7 @@ namespace WinForms
             comboFunc = Convert.ToInt32(comboBoxNome.SelectedValue);
 
             thread = new Thread(ConsultarComissaoThread);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
 
             if (combo == 0)
@@ -284,7 +284,7 @@ namespace WinForms
                 gridViewComissaoInfo = (GridViewComissaoInfo)dataGridViewComissao.SelectedRows[0].DataBoundItem;
 
                 thread = new Thread(AbrirVendaThread);
-                form1.ExecutarThread(thread);
+                form1.ExecutarThread(thread, progressBar1, labelBarra);
                 this.Activate();
                 AbrirVenda(vendaInfo);
             }

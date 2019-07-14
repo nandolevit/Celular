@@ -31,12 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.groupBoxLancamentos = new System.Windows.Forms.GroupBox();
             this.groupBoxCategoria = new System.Windows.Forms.GroupBox();
+            this.buttonCategoriaAdd = new System.Windows.Forms.Button();
+            this.buttonCategoriaBuscar = new System.Windows.Forms.Button();
             this.labelDescricao = new System.Windows.Forms.Label();
             this.textBoxCodCat = new System.Windows.Forms.TextBox();
             this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.radioButtonSaidas = new System.Windows.Forms.RadioButton();
             this.radioButtonEntradas = new System.Windows.Forms.RadioButton();
             this.groupBoxGeral = new System.Windows.Forms.GroupBox();
+            this.buttonParcelas = new System.Windows.Forms.Button();
             this.labelValorLancado = new System.Windows.Forms.Label();
             this.labelParcela = new System.Windows.Forms.Label();
             this.labelNumParcela = new System.Windows.Forms.Label();
@@ -52,10 +55,9 @@
             this.labelFunc = new System.Windows.Forms.Label();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
-            this.buttonParcelas = new System.Windows.Forms.Button();
-            this.buttonCategoriaAdd = new System.Windows.Forms.Button();
-            this.buttonCategoriaBuscar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBoxLancamentos.SuspendLayout();
             this.groupBoxCategoria.SuspendLayout();
             this.groupBoxInfo.SuspendLayout();
@@ -85,6 +87,35 @@
             this.groupBoxCategoria.TabIndex = 1;
             this.groupBoxCategoria.TabStop = false;
             this.groupBoxCategoria.Text = "Categoria";
+            // 
+            // buttonCategoriaAdd
+            // 
+            this.buttonCategoriaAdd.BackgroundImage = global::WinForms.Properties.Resources.icons8_Add_New_32;
+            this.buttonCategoriaAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCategoriaAdd.FlatAppearance.BorderSize = 0;
+            this.buttonCategoriaAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCategoriaAdd.Location = new System.Drawing.Point(62, 20);
+            this.buttonCategoriaAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonCategoriaAdd.Name = "buttonCategoriaAdd";
+            this.buttonCategoriaAdd.Size = new System.Drawing.Size(20, 20);
+            this.buttonCategoriaAdd.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.buttonCategoriaAdd, "Adicionar uma nova categoria.");
+            this.buttonCategoriaAdd.UseVisualStyleBackColor = true;
+            this.buttonCategoriaAdd.Click += new System.EventHandler(this.buttonCategoriaAdd_Click);
+            // 
+            // buttonCategoriaBuscar
+            // 
+            this.buttonCategoriaBuscar.BackgroundImage = global::WinForms.Properties.Resources.icons8_Filter_32;
+            this.buttonCategoriaBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCategoriaBuscar.FlatAppearance.BorderSize = 0;
+            this.buttonCategoriaBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCategoriaBuscar.Location = new System.Drawing.Point(42, 20);
+            this.buttonCategoriaBuscar.Name = "buttonCategoriaBuscar";
+            this.buttonCategoriaBuscar.Size = new System.Drawing.Size(20, 20);
+            this.buttonCategoriaBuscar.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.buttonCategoriaBuscar, "Selecionar uma categoria.");
+            this.buttonCategoriaBuscar.UseVisualStyleBackColor = true;
+            this.buttonCategoriaBuscar.Click += new System.EventHandler(this.buttonCategoriaBuscar_Click);
             // 
             // labelDescricao
             // 
@@ -154,6 +185,22 @@
             this.groupBoxGeral.TabIndex = 1;
             this.groupBoxGeral.TabStop = false;
             this.groupBoxGeral.Text = "Informações gerais:";
+            // 
+            // buttonParcelas
+            // 
+            this.buttonParcelas.BackgroundImage = global::WinForms.Properties.Resources.icons8_Split_Files_32;
+            this.buttonParcelas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonParcelas.FlatAppearance.BorderSize = 0;
+            this.buttonParcelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonParcelas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonParcelas.Location = new System.Drawing.Point(602, 29);
+            this.buttonParcelas.Name = "buttonParcelas";
+            this.buttonParcelas.Size = new System.Drawing.Size(23, 23);
+            this.buttonParcelas.TabIndex = 8;
+            this.buttonParcelas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.buttonParcelas, "Gerar parcelas.");
+            this.buttonParcelas.UseVisualStyleBackColor = true;
+            this.buttonParcelas.Click += new System.EventHandler(this.buttonParcelas_Click);
             // 
             // labelValorLancado
             // 
@@ -269,9 +316,9 @@
             // 
             this.labelFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFunc.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelFunc.Location = new System.Drawing.Point(13, 275);
+            this.labelFunc.Location = new System.Drawing.Point(13, 248);
             this.labelFunc.Name = "labelFunc";
-            this.labelFunc.Size = new System.Drawing.Size(440, 23);
+            this.labelFunc.Size = new System.Drawing.Size(440, 20);
             this.labelFunc.TabIndex = 8;
             this.labelFunc.Text = "Lançado Por: ";
             // 
@@ -303,56 +350,31 @@
             this.buttonFechar.UseVisualStyleBackColor = true;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
-            // buttonParcelas
+            // labelBarra
             // 
-            this.buttonParcelas.BackgroundImage = global::WinForms.Properties.Resources.icons8_Split_Files_32;
-            this.buttonParcelas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonParcelas.FlatAppearance.BorderSize = 0;
-            this.buttonParcelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonParcelas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonParcelas.Location = new System.Drawing.Point(602, 29);
-            this.buttonParcelas.Name = "buttonParcelas";
-            this.buttonParcelas.Size = new System.Drawing.Size(23, 23);
-            this.buttonParcelas.TabIndex = 8;
-            this.buttonParcelas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.buttonParcelas, "Gerar parcelas.");
-            this.buttonParcelas.UseVisualStyleBackColor = true;
-            this.buttonParcelas.Click += new System.EventHandler(this.buttonParcelas_Click);
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(10, 275);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
             // 
-            // buttonCategoriaAdd
+            // progressBar1
             // 
-            this.buttonCategoriaAdd.BackgroundImage = global::WinForms.Properties.Resources.icons8_Add_New_32;
-            this.buttonCategoriaAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCategoriaAdd.FlatAppearance.BorderSize = 0;
-            this.buttonCategoriaAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCategoriaAdd.Location = new System.Drawing.Point(62, 20);
-            this.buttonCategoriaAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonCategoriaAdd.Name = "buttonCategoriaAdd";
-            this.buttonCategoriaAdd.Size = new System.Drawing.Size(20, 20);
-            this.buttonCategoriaAdd.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.buttonCategoriaAdd, "Adicionar uma nova categoria.");
-            this.buttonCategoriaAdd.UseVisualStyleBackColor = true;
-            this.buttonCategoriaAdd.Click += new System.EventHandler(this.buttonCategoriaAdd_Click);
-            // 
-            // buttonCategoriaBuscar
-            // 
-            this.buttonCategoriaBuscar.BackgroundImage = global::WinForms.Properties.Resources.icons8_Filter_32;
-            this.buttonCategoriaBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCategoriaBuscar.FlatAppearance.BorderSize = 0;
-            this.buttonCategoriaBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCategoriaBuscar.Location = new System.Drawing.Point(42, 20);
-            this.buttonCategoriaBuscar.Name = "buttonCategoriaBuscar";
-            this.buttonCategoriaBuscar.Size = new System.Drawing.Size(20, 20);
-            this.buttonCategoriaBuscar.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.buttonCategoriaBuscar, "Selecionar uma categoria.");
-            this.buttonCategoriaBuscar.UseVisualStyleBackColor = true;
-            this.buttonCategoriaBuscar.Click += new System.EventHandler(this.buttonCategoriaBuscar_Click);
+            this.progressBar1.Location = new System.Drawing.Point(10, 291);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(395, 23);
+            this.progressBar1.TabIndex = 47;
+            this.progressBar1.Visible = false;
             // 
             // FormLancamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 300);
+            this.ClientSize = new System.Drawing.Size(661, 319);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelFunc);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonFechar);
@@ -406,5 +428,7 @@
         private System.Windows.Forms.Button buttonCategoriaBuscar;
         private System.Windows.Forms.Label labelFunc;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

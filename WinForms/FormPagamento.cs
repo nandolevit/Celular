@@ -346,7 +346,7 @@ namespace WinForms
         private void ConcluirVenda()
         {
             thread = new Thread(Concluir);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
         }
 

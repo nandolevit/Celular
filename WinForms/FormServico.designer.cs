@@ -69,6 +69,8 @@
             this.buttonFechar = new System.Windows.Forms.Button();
             this.buttonRemover = new System.Windows.Forms.Button();
             this.buttonImprimir = new System.Windows.Forms.Button();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServico)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBoxServico.SuspendLayout();
@@ -496,11 +498,31 @@
             this.buttonImprimir.UseVisualStyleBackColor = true;
             this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(101, 510);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(101, 526);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(395, 23);
+            this.progressBar1.TabIndex = 47;
+            this.progressBar1.Visible = false;
+            // 
             // FormServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 561);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBoxServico);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSalvar);
@@ -518,6 +540,7 @@
             this.groupBoxServico.ResumeLayout(false);
             this.groupBoxServico.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -562,5 +585,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colObs;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTaxa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colData;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

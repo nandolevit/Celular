@@ -57,7 +57,7 @@ namespace WinForms
         {
             pesquisa = textBoxPesquisar.Text.Trim();
             thread = new Thread(RealizarPesquisaThread);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
             PreencherGrid();
         }

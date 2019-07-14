@@ -36,7 +36,7 @@ namespace WinForms
             textBoxCodProd.Select();
 
             thread = new Thread(ConsultarEletro);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
             
         }

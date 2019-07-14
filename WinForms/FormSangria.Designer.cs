@@ -44,6 +44,8 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
             this.labelObs = new System.Windows.Forms.Label();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // buttonContaAdd
@@ -209,11 +211,31 @@
             this.labelObs.TabIndex = 15;
             this.labelObs.Text = "Observações:";
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(12, 175);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 191);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(227, 23);
+            this.progressBar1.TabIndex = 47;
+            this.progressBar1.Visible = false;
+            // 
             // FormSangria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 224);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelObs);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonFechar);
@@ -256,5 +278,7 @@
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonFechar;
         private System.Windows.Forms.Label labelObs;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

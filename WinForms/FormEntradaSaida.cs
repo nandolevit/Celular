@@ -205,7 +205,7 @@ namespace WinForms
         {
             ParametroPesquisar();
             thread = new Thread(ExecuntarConsultaThread);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
             PreencherGrid();
             
@@ -233,7 +233,7 @@ namespace WinForms
                     if (FormMessage.ShowMessegeQuestion("Este lancamento já foi confirmado! Deseja cancelar a confirmação?") == DialogResult.Yes)
                     {
                         thread = new Thread(AtualizarConselar);
-                        form1.ExecutarThread(thread);
+                        form1.ExecutarThread(thread, progressBar1, labelBarra);
                         this.Activate();
                         FormMessage.ShowMessegeInfo("Alteração realizada com sucesso! Abra o lançamento novamente...");
                         ExecutarConsulta();
@@ -297,7 +297,7 @@ namespace WinForms
                 if (FormMessage.ShowMessegeQuestion("Deseja cancelar este lançamento?") == DialogResult.Yes)
                 {
                     thread = new Thread(Desativar);
-                    form1.ExecutarThread(thread);
+                    form1.ExecutarThread(thread, progressBar1, labelBarra);
                     this.Activate();
                     ExecutarConsulta();
                 }

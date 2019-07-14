@@ -69,6 +69,8 @@
             this.labelSangriaValor = new System.Windows.Forms.Label();
             this.labelSangria = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.labelBarra = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -519,11 +521,31 @@
             this.labelTitle.TabIndex = 44;
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 444);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(395, 23);
+            this.progressBar1.TabIndex = 45;
+            this.progressBar1.Visible = false;
+            // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(12, 428);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 30;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
             // FormCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 462);
+            this.ClientSize = new System.Drawing.Size(418, 472);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.labelSangriaValor);
             this.Controls.Add(this.labelSangria);
@@ -594,5 +616,7 @@
         private System.Windows.Forms.Label labelSangriaValor;
         private System.Windows.Forms.Label labelSangria;
         private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label labelBarra;
     }
 }

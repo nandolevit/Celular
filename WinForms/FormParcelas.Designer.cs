@@ -48,6 +48,8 @@
             this.colVencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParcelas)).BeginInit();
             this.SuspendLayout();
@@ -222,11 +224,31 @@
             this.colDescricao.Name = "colDescricao";
             this.colDescricao.Width = 280;
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(13, 337);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(13, 353);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(501, 23);
+            this.progressBar1.TabIndex = 47;
+            this.progressBar1.Visible = false;
+            // 
             // FormParcelas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 344);
+            this.ClientSize = new System.Drawing.Size(526, 376);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.dataGridViewParcelas);
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.buttonSalvar);
@@ -268,5 +290,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colVencimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

@@ -71,7 +71,7 @@ namespace WinForms
 
             gridViewVendaPeriodoColecao = new GridViewVendaPeriodoColecao();
             thread = new Thread(PreencherLista);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
 
             labelValorDinheiro.Text = totaldinheiro.ToString("C");

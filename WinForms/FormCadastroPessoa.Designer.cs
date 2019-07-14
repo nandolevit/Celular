@@ -68,6 +68,8 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBoxEnd.SuspendLayout();
             this.groupBoxDadosPessoais.SuspendLayout();
             this.SuspendLayout();
@@ -475,11 +477,31 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(12, 432);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 448);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(341, 23);
+            this.progressBar1.TabIndex = 47;
+            this.progressBar1.Visible = false;
+            // 
             // FormCadastroPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(546, 482);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonFechar);
@@ -493,6 +515,7 @@
             this.groupBoxDadosPessoais.ResumeLayout(false);
             this.groupBoxDadosPessoais.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -537,5 +560,7 @@
         private System.Windows.Forms.TextBox textBoxNiver;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

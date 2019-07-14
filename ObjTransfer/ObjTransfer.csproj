@@ -101,6 +101,8 @@
     <Compile Include="GridViewComissaoInfo.cs" />
     <Compile Include="GridViewVendaPeriodo.cs" />
     <Compile Include="GridViewVendaPeriodoColecao.cs" />
+    <Compile Include="IphoneCelularColecao.cs" />
+    <Compile Include="IphoneCelularInfo.cs" />
     <Compile Include="IphoneModeloColecao.cs" />
     <Compile Include="IphoneModeloCorColecao.cs" />
     <Compile Include="IphoneModeloCorInfo.cs" />

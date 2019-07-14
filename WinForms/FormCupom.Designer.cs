@@ -34,6 +34,8 @@
             this.buttonTeste = new System.Windows.Forms.Button();
             this.textBoxTeste = new System.Windows.Forms.TextBox();
             this.labelTeste = new System.Windows.Forms.Label();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // textBoxCupom
@@ -102,11 +104,31 @@
             this.labelTeste.TabIndex = 0;
             this.labelTeste.Text = "Insira o número do controle:";
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(9, 573);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(9, 589);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(391, 23);
+            this.progressBar1.TabIndex = 47;
+            this.progressBar1.Visible = false;
+            // 
             // FormCupom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 583);
+            this.ClientSize = new System.Drawing.Size(412, 617);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelTeste);
             this.Controls.Add(this.buttonTeste);
             this.Controls.Add(this.textBoxTeste);
@@ -129,5 +151,7 @@
         private System.Windows.Forms.Button buttonTeste;
         private System.Windows.Forms.TextBox textBoxTeste;
         private System.Windows.Forms.Label labelTeste;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

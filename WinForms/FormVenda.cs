@@ -93,7 +93,7 @@ namespace WinForms
         private void VendaThread()
         {
             thread = new Thread(PreencherFormThread);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
         }
 

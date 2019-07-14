@@ -37,6 +37,8 @@
             this.labelSaldo = new System.Windows.Forms.Label();
             this.buttonConfirmar = new System.Windows.Forms.Button();
             this.buttonJuros = new System.Windows.Forms.Button();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // buttonFechar
@@ -130,11 +132,31 @@
             this.buttonJuros.UseVisualStyleBackColor = false;
             this.buttonJuros.Click += new System.EventHandler(this.buttonJuros_Click);
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(9, 180);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(9, 196);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(284, 23);
+            this.progressBar1.TabIndex = 47;
+            this.progressBar1.Visible = false;
+            // 
             // FormLancamentosConfirmar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 187);
+            this.ClientSize = new System.Drawing.Size(310, 237);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.buttonJuros);
             this.Controls.Add(this.buttonConfirmar);
             this.Controls.Add(this.labelValorSaldo);
@@ -163,5 +185,7 @@
         private System.Windows.Forms.Label labelSaldo;
         private System.Windows.Forms.Button buttonConfirmar;
         private System.Windows.Forms.Button buttonJuros;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

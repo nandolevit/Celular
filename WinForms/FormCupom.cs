@@ -71,7 +71,7 @@ namespace WinForms
             if (enumCupom == EnumCupom.Rodape)
             {
                 thread = new Thread(CriarCupom);
-                form1.ExecutarThread(thread);
+                form1.ExecutarThread(thread, progressBar1, labelBarra);
                 this.Activate();
                 PreencherForm(ArrCupom[0] + ArrCupom[1]);
                 
@@ -94,7 +94,7 @@ namespace WinForms
         private void CriarCaixa()
         {
             thread = new Thread(PreencherCaixaThread);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
             PreencherForm(ArrCupom[0]);
         }

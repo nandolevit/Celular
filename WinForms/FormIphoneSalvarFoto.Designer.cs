@@ -1,6 +1,6 @@
 ﻿namespace WinForms
 {
-    partial class FormSalvarFotoIphone
+    partial class FormIphoneSalvarFoto
     {
         /// <summary>
         /// Required designer variable.

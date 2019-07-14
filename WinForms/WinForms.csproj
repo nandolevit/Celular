@@ -110,7 +110,6 @@
     <Compile Include="AccessLogin.cs" />
     <Compile Include="Caixa.cs" />
     <Compile Include="Cupom.cs" />
-    <Compile Include="EletroEnum.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,11 +316,11 @@
     <Compile Include="FormReportViewerCupomSemRodape.Designer.cs">
       <DependentUpon>FormReportViewerCupomSemRodape.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSalvarFotoIphone.cs">
+    <Compile Include="FormIphoneSalvarFoto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSalvarFotoIphone.Designer.cs">
-      <DependentUpon>FormSalvarFotoIphone.cs</DependentUpon>
+    <Compile Include="FormIphoneSalvarFoto.Designer.cs">
+      <DependentUpon>FormIphoneSalvarFoto.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSangria.cs">
       <SubType>Form</SubType>
@@ -476,8 +475,8 @@
     <EmbeddedResource Include="FormReportViewerCupomSemRodape.resx">
       <DependentUpon>FormReportViewerCupomSemRodape.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSalvarFotoIphone.resx">
-      <DependentUpon>FormSalvarFotoIphone.cs</DependentUpon>
+    <EmbeddedResource Include="FormIphoneSalvarFoto.resx">
+      <DependentUpon>FormIphoneSalvarFoto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSangria.resx">
       <DependentUpon>FormSangria.cs</DependentUpon>

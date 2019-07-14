@@ -42,6 +42,8 @@
             this.buttonBuscarEletro = new System.Windows.Forms.Button();
             this.buttonBuscarTipo = new System.Windows.Forms.Button();
             this.groupBoxDecricao = new System.Windows.Forms.GroupBox();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBoxDecricao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,11 +203,31 @@
             this.groupBoxDecricao.TabStop = false;
             this.groupBoxDecricao.Text = "Produto/Defeito:";
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(12, 127);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 143);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(395, 23);
+            this.progressBar1.TabIndex = 47;
+            this.progressBar1.Visible = false;
+            // 
             // FormProdutoDefeito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 178);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBoxDecricao);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonFechar);
@@ -215,6 +237,7 @@
             this.groupBoxDecricao.ResumeLayout(false);
             this.groupBoxDecricao.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -233,5 +256,7 @@
         private System.Windows.Forms.Button buttonBuscarEletro;
         private System.Windows.Forms.Button buttonBuscarTipo;
         private System.Windows.Forms.GroupBox groupBoxDecricao;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

@@ -56,6 +56,7 @@
             this.radioButtonCancelada = new System.Windows.Forms.RadioButton();
             this.radioButtonConcluida = new System.Windows.Forms.RadioButton();
             this.comboBoxTurno = new System.Windows.Forms.ComboBox();
+            this.buttonBuscar = new System.Windows.Forms.Button();
             this.labelDataFinal = new System.Windows.Forms.Label();
             this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
             this.labelInicial = new System.Windows.Forms.Label();
@@ -78,7 +79,8 @@
             this.buttonAbrir = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVendaPeriodo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -283,6 +285,19 @@
             this.comboBoxTurno.Name = "comboBoxTurno";
             this.comboBoxTurno.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTurno.TabIndex = 12;
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.BackgroundImage = global::WinForms.Properties.Resources.icons8_Filter_32;
+            this.buttonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonBuscar.FlatAppearance.BorderSize = 0;
+            this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscar.Location = new System.Drawing.Point(1009, 26);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(25, 25);
+            this.buttonBuscar.TabIndex = 11;
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // labelDataFinal
             // 
@@ -499,24 +514,31 @@
             this.buttonCancelar.UseVisualStyleBackColor = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
-            // buttonBuscar
+            // labelBarra
             // 
-            this.buttonBuscar.BackgroundImage = global::WinForms.Properties.Resources.icons8_Filter_32;
-            this.buttonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonBuscar.FlatAppearance.BorderSize = 0;
-            this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBuscar.Location = new System.Drawing.Point(1009, 26);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(25, 25);
-            this.buttonBuscar.TabIndex = 11;
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(379, 542);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 47;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(379, 558);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(395, 23);
+            this.progressBar1.TabIndex = 48;
+            this.progressBar1.Visible = false;
             // 
             // FormVendaRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 593);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.buttonAbrir);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -593,5 +615,7 @@
         private System.Windows.Forms.RadioButton radioButtonAberta;
         private System.Windows.Forms.RadioButton radioButtonCancelada;
         private System.Windows.Forms.RadioButton radioButtonConcluida;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

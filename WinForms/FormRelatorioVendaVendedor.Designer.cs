@@ -50,6 +50,8 @@
             this.buttonAbrir = new System.Windows.Forms.Button();
             this.labelQuantValor = new System.Windows.Forms.Label();
             this.labelQuant = new System.Windows.Forms.Label();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComissao)).BeginInit();
             this.groupBoxComissao.SuspendLayout();
@@ -285,11 +287,31 @@
             this.labelQuant.TabIndex = 48;
             this.labelQuant.Text = "Total de itens:";
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(444, 580);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 50;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(444, 596);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(395, 23);
+            this.progressBar1.TabIndex = 51;
+            this.progressBar1.Visible = false;
+            // 
             // FormRelatorioVendaVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1296, 631);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelQuantValor);
             this.Controls.Add(this.labelQuant);
             this.Controls.Add(this.buttonAbrir);
@@ -336,5 +358,7 @@
         private System.Windows.Forms.Button buttonAbrir;
         private System.Windows.Forms.Label labelQuantValor;
         private System.Windows.Forms.Label labelQuant;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

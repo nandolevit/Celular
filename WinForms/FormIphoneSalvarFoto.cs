@@ -14,7 +14,7 @@ using ObjTransfer;
 
 namespace WinForms
 {
-    public partial class FormSalvarFotoIphone : Form
+    public partial class FormIphoneSalvarFoto : Form
     {
         ServicoNegocio negocioServ = new ServicoNegocio(Form1.Empresa.empconexao);
         IphoneModeloColecao colecaoIphone;
@@ -22,7 +22,7 @@ namespace WinForms
         string foto;
         byte[] imagem_byte = null;
 
-        public FormSalvarFotoIphone(IphoneModeloColecao colecao)
+        public FormIphoneSalvarFoto(IphoneModeloColecao colecao)
         {
             InitializeComponent();
             colecaoIphone = colecao;

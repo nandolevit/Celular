@@ -72,6 +72,8 @@
             this.buttonNovo = new System.Windows.Forms.Button();
             this.buttonConfirmar = new System.Windows.Forms.Button();
             this.buttonAbrir = new System.Windows.Forms.Button();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntradaSaida)).BeginInit();
             this.groupBoxPesquisa.SuspendLayout();
             this.groupBoxLanc.SuspendLayout();
@@ -501,11 +503,31 @@
             this.buttonAbrir.UseVisualStyleBackColor = true;
             this.buttonAbrir.Click += new System.EventHandler(this.buttonAbrir_Click);
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(445, 544);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(445, 560);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(395, 23);
+            this.progressBar1.TabIndex = 47;
+            this.progressBar1.Visible = false;
+            // 
             // FormEntradaSaida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1323, 595);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelItem);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.buttonExcluir);
@@ -576,5 +598,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colParcelas;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn colObs;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

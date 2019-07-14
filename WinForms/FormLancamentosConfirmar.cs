@@ -29,7 +29,7 @@ namespace WinForms
             formFormat.formatar();
             grid = entrada;
             thread = new Thread(Consultar);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
         }
 
@@ -50,7 +50,7 @@ namespace WinForms
             ent.entradatavenc = dateTimePickerData.Value;
 
             thread = new Thread(Atualizar);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
             this.DialogResult = DialogResult.Yes;
         }

@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinForms
+namespace ObjTransfer
 {
-    public enum EletroEnum
+    public class IphoneCelularColecao : List<IphoneCelularInfo>
     {
-        Serviço,
-        Nota,
-        Garantia,
-        Eletro,
-        EletroGarantia
     }
 }

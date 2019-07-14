@@ -155,7 +155,7 @@ namespace WinForms
         private void PreencherFormCliente()
         {
             thread = new Thread(ConsultarEndCliente);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
 
             textBoxId.Text = string.Format("{0:000000}", infoCliente.cliid);
@@ -408,7 +408,7 @@ namespace WinForms
         private void SalvarThread()
         {
             thread = new Thread(Salvar);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
 
             this.Close();
             

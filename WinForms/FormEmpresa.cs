@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.IO;
 
@@ -16,6 +16,8 @@ namespace WinForms
 {
     public partial class FormEmpresa : Form
     {
+        Thread thread;
+        Form1 form1 = new Form1();
         EmpresaNegocios empresaNegocios = new EmpresaNegocios();
         public EmpresaInfo infoEmpresa;
         ComputerColecao colecaoComp;
@@ -152,6 +154,8 @@ namespace WinForms
         {
             if (FormMessage.ShowMessegeQuestion("Deseja inserir a nova empresa?") == DialogResult.Yes)
             {
+                panelUnidade.Enabled = false;
+
                 if (serializarNegocios.SerializarObjeto(infoEmpresa, Form1.FileNameEmp))
                 {
                     Form1.Empresa = (serializarNegocios.DesserializarObjeto(Form1.FileNameEmp) as EmpresaInfo);
@@ -195,7 +199,9 @@ namespace WinForms
                         this.DialogResult = DialogResult.Yes;
                     }
 
-                    InserirUnid();
+                    thread = new Thread(InserirUnid);
+                    form1.ExecutarThread(thread, progressBar1, labelBarra);
+                    //InserirUnid();
                 }
                 else
                     FormMessage.ShowMessegeWarning("Falha, tente novamente!");
@@ -258,6 +264,7 @@ namespace WinForms
 
             serializarNegocios.SerializarObjeto(iphoneModeloColecao, Form1.FileIphone);
             serializarNegocios.SerializarObjeto(iphoneCorColecao, Form1.FileIphoneCores);
+            Form1.encerrarThread = true;
         }
 
         private void FormEmpresa_Load(object sender, EventArgs e)

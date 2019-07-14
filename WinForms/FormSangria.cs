@@ -122,7 +122,7 @@ namespace WinForms
                     valor = Convert.ToDecimal(textBoxValor.Text);
                     obs = textBoxObs.Text;
                     thread = new Thread(Salvar);
-                    form1.ExecutarThread(thread);
+                    form1.ExecutarThread(thread, progressBar1, labelBarra);
                     this.Close();
                 }
             }
@@ -164,7 +164,7 @@ namespace WinForms
         private void FormSangria_Load(object sender, EventArgs e)
         {
             thread = new Thread(Saldo);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
             labelCaixa.Text = totalEspecie.ToString("C2");
             textBoxValor.Text = "0";

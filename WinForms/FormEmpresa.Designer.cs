@@ -76,12 +76,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewUnid = new System.Windows.Forms.DataGridView();
             this.colUnidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.panelUnidade = new System.Windows.Forms.Panel();
+            this.labelBarra = new System.Windows.Forms.Label();
             this.tabControlEmp.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPageUnid.SuspendLayout();
             this.groupBoxRede.SuspendLayout();
             this.groupBoxServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnid)).BeginInit();
+            this.panelUnidade.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxCnpj
@@ -376,9 +380,10 @@
             // 
             // tabPageUnid
             // 
-            this.tabPageUnid.Controls.Add(this.buttonUnid);
+            this.tabPageUnid.Controls.Add(this.labelBarra);
+            this.tabPageUnid.Controls.Add(this.panelUnidade);
+            this.tabPageUnid.Controls.Add(this.progressBar1);
             this.tabPageUnid.Controls.Add(this.groupBoxRede);
-            this.tabPageUnid.Controls.Add(this.groupBoxServer);
             this.tabPageUnid.Controls.Add(this.textBoxServer);
             this.tabPageUnid.Controls.Add(this.label2);
             this.tabPageUnid.Controls.Add(this.textBoxUnidNome);
@@ -397,7 +402,7 @@
             this.buttonUnid.BackColor = System.Drawing.Color.Green;
             this.buttonUnid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUnid.ForeColor = System.Drawing.Color.Lime;
-            this.buttonUnid.Location = new System.Drawing.Point(443, 280);
+            this.buttonUnid.Location = new System.Drawing.Point(121, 3);
             this.buttonUnid.Name = "buttonUnid";
             this.buttonUnid.Size = new System.Drawing.Size(112, 60);
             this.buttonUnid.TabIndex = 45;
@@ -498,7 +503,7 @@
             // 
             this.groupBoxServer.Controls.Add(this.radioButtonNao);
             this.groupBoxServer.Controls.Add(this.radioButtonSim);
-            this.groupBoxServer.Location = new System.Drawing.Point(325, 280);
+            this.groupBoxServer.Location = new System.Drawing.Point(3, 3);
             this.groupBoxServer.Name = "groupBoxServer";
             this.groupBoxServer.Size = new System.Drawing.Size(112, 44);
             this.groupBoxServer.TabIndex = 41;
@@ -585,6 +590,33 @@
             this.colUnidade.ReadOnly = true;
             this.colUnidade.Width = 530;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 299);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(301, 23);
+            this.progressBar1.TabIndex = 46;
+            this.progressBar1.Visible = false;
+            // 
+            // panelUnidade
+            // 
+            this.panelUnidade.Controls.Add(this.buttonUnid);
+            this.panelUnidade.Controls.Add(this.groupBoxServer);
+            this.panelUnidade.Location = new System.Drawing.Point(319, 280);
+            this.panelUnidade.Name = "panelUnidade";
+            this.panelUnidade.Size = new System.Drawing.Size(236, 65);
+            this.panelUnidade.TabIndex = 47;
+            // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(9, 283);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
             // FormEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,6 +637,7 @@
             this.groupBoxServer.ResumeLayout(false);
             this.groupBoxServer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnid)).EndInit();
+            this.panelUnidade.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -659,5 +692,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxMac;
         private System.Windows.Forms.Button buttonUnid;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Panel panelUnidade;
+        private System.Windows.Forms.Label labelBarra;
     }
 }

@@ -94,7 +94,7 @@ namespace WinForms
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             thread = new Thread(Salvar);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
             this.DialogResult = DialogResult.Yes;
         }

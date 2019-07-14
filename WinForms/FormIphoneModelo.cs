@@ -22,9 +22,22 @@ namespace WinForms
         IphoneModeloCorColecao colecaoCor;
         IphoneModeloCorColecao colecaoCorSelecionada;
         CodDescricaoColecao colecaoCores;
+        ClienteInfo infoCliente;
+        IphoneCelularInfo iphone;
         int cod = 0;
        
         public FormIphoneModelo()
+        {
+            Inicializar();
+        }
+
+        public FormIphoneModelo(ClienteInfo cliente)
+        {
+            Inicializar();
+            infoCliente = cliente;
+        }
+
+        private void Inicializar()
         {
             InitializeComponent();
             FormFormat formFormat = new FormFormat(this);
@@ -58,6 +71,10 @@ namespace WinForms
             if (cod > 0)
             {
                 int dex = Convert.ToInt32(comboBoxModelo.SelectedValue);
+                textBoxModelo.Text = comboBoxModelo.Text;
+                textBoxCap.Clear();
+                textBoxNumMod.Clear();
+                textBoxCor.Clear();
 
                 foreach (IphoneModeloInfo phone in colecaoIphone)
                 {
@@ -87,6 +104,7 @@ namespace WinForms
                 textBoxSensores.Text = strConver(infoIphone.iphmodsensores);
                 textBoxCaixa.Text = strConver(infoIphone.iphmodconteudocaixa);
                 textBoxGravacao.Text = strConver(infoIphone.iphmodgravacao);
+                textBoxResistente.Text = strConver(infoIphone.iphmodresistente);
 
                 comboBoxNumMod.Text = string.Empty;
                 comboBoxCapacidade.Text = string.Empty;
@@ -128,6 +146,7 @@ namespace WinForms
 
         private void ComboBoxCor_SelectedIndexChanged(object sender, EventArgs e)
         {
+            textBoxCor.Text = comboBoxCor.Text;
             foreach (IphoneModeloCorInfo cor in colecaoCorSelecionada)
             {
                 if (comboBoxCor.Text == cor.iphcordescricao)
@@ -136,6 +155,51 @@ namespace WinForms
                     break;
                 }
             }
+        }
+
+        private void ComboBoxNumMod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxNumMod.Text = comboBoxNumMod.Text;
+        }
+
+        private void ComboBoxCapacidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxCap.Text = comboBoxCapacidade.Text;
+        }
+
+        private void ButtonFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void ButtonSalvar_Click(object sender, EventArgs e)
+        {
+            if (FormMessage.ShowMessegeQuestion("Deseja salvar?") == DialogResult.Yes)
+                Salvar();
+        }
+
+        private void Salvar()
+        {
+            PreencherCelular();
+            iphone.celid = negocioServ.InsertIphoneCelular(iphone);
+        }
+
+        private void PreencherCelular()
+        {
+            iphone = new IphoneCelularInfo
+            {
+                celanocompra = textBoxAnoCompra.Text,
+                celcapacidade = textBoxCap.Text,
+                celcor = textBoxCor.Text,
+                celid = 0,
+                celidcliente = 206,
+                celidmodiphone = infoIphone.iphmodid,
+                celimei = textBoxImei.Text,
+                celmodelo = textBoxNumMod.Text,
+                celobs = textBoxObs.Text,
+                celserie = textBoxSerie.Text,
+                celiphonedescricao = textBoxModelo.Text
+            };
         }
     }
 }

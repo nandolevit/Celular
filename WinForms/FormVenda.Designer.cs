@@ -41,6 +41,15 @@
             this.labelDescricao = new System.Windows.Forms.Label();
             this.labelProd = new System.Windows.Forms.Label();
             this.dataGridViewItens = new System.Windows.Forms.DataGridView();
+            this.colItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValorUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFunc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxBarras = new System.Windows.Forms.TextBox();
             this.labelBarras = new System.Windows.Forms.Label();
             this.labelQuant = new System.Windows.Forms.Label();
@@ -77,15 +86,8 @@
             this.buttonProd = new System.Windows.Forms.Button();
             this.buttonResponsavel = new System.Windows.Forms.Button();
             this.buttonCliente = new System.Windows.Forms.Button();
-            this.colItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValorUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFunc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItens)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConcluido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCancel)).BeginInit();
@@ -132,6 +134,96 @@
             this.dataGridViewItens.TabIndex = 7;
             this.dataGridViewItens.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.DataGridViewItens_RowPostPaint);
             this.dataGridViewItens.SelectionChanged += new System.EventHandler(this.dataGridViewItens_SelectionChanged);
+            // 
+            // colItem
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colItem.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colItem.HeaderText = "Item:";
+            this.colItem.Name = "colItem";
+            this.colItem.Width = 35;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colId.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colId.HeaderText = "Id:";
+            this.colId.Name = "colId";
+            this.colId.Visible = false;
+            // 
+            // colCod
+            // 
+            this.colCod.DataPropertyName = "Barras";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCod.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colCod.HeaderText = "CódBarras:";
+            this.colCod.Name = "colCod";
+            this.colCod.Width = 90;
+            // 
+            // colProduto
+            // 
+            this.colProduto.DataPropertyName = "Descricao";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colProduto.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colProduto.HeaderText = "Produto:";
+            this.colProduto.Name = "colProduto";
+            this.colProduto.Width = 480;
+            // 
+            // colQuant
+            // 
+            this.colQuant.DataPropertyName = "Quant";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Format = "N3";
+            dataGridViewCellStyle5.NullValue = null;
+            this.colQuant.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colQuant.HeaderText = "Qtd:";
+            this.colQuant.Name = "colQuant";
+            this.colQuant.Width = 50;
+            // 
+            // colValorUnit
+            // 
+            this.colValorUnit.DataPropertyName = "ValorUnit";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.colValorUnit.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colValorUnit.HeaderText = "Valor(Unit)";
+            this.colValorUnit.Name = "colValorUnit";
+            this.colValorUnit.Width = 70;
+            // 
+            // colDesconto
+            // 
+            this.colDesconto.DataPropertyName = "ValorDesc";
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.colDesconto.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colDesconto.HeaderText = "Desc (%):";
+            this.colDesconto.Name = "colDesconto";
+            this.colDesconto.Width = 70;
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.DataPropertyName = "Total";
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colSubTotal.HeaderText = "Subtotal:";
+            this.colSubTotal.Name = "colSubTotal";
+            this.colSubTotal.Width = 80;
+            // 
+            // colFunc
+            // 
+            this.colFunc.DataPropertyName = "funnome";
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colFunc.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colFunc.HeaderText = "Responsável:";
+            this.colFunc.Name = "colFunc";
+            this.colFunc.Width = 250;
             // 
             // textBoxBarras
             // 
@@ -530,101 +622,31 @@
             this.buttonCliente.UseVisualStyleBackColor = false;
             this.buttonCliente.Click += new System.EventHandler(this.buttonCliente_Click);
             // 
-            // colItem
+            // labelBarra
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colItem.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colItem.HeaderText = "Item:";
-            this.colItem.Name = "colItem";
-            this.colItem.Width = 35;
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(481, 534);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 46;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
             // 
-            // colId
+            // progressBar1
             // 
-            this.colId.DataPropertyName = "Id";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colId.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colId.HeaderText = "Id:";
-            this.colId.Name = "colId";
-            this.colId.Visible = false;
-            // 
-            // colCod
-            // 
-            this.colCod.DataPropertyName = "Barras";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCod.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colCod.HeaderText = "CódBarras:";
-            this.colCod.Name = "colCod";
-            this.colCod.Width = 90;
-            // 
-            // colProduto
-            // 
-            this.colProduto.DataPropertyName = "Descricao";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colProduto.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colProduto.HeaderText = "Produto:";
-            this.colProduto.Name = "colProduto";
-            this.colProduto.Width = 480;
-            // 
-            // colQuant
-            // 
-            this.colQuant.DataPropertyName = "Quant";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.Format = "N3";
-            dataGridViewCellStyle5.NullValue = null;
-            this.colQuant.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colQuant.HeaderText = "Qtd:";
-            this.colQuant.Name = "colQuant";
-            this.colQuant.Width = 50;
-            // 
-            // colValorUnit
-            // 
-            this.colValorUnit.DataPropertyName = "ValorUnit";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.colValorUnit.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colValorUnit.HeaderText = "Valor(Unit)";
-            this.colValorUnit.Name = "colValorUnit";
-            this.colValorUnit.Width = 70;
-            // 
-            // colDesconto
-            // 
-            this.colDesconto.DataPropertyName = "ValorDesc";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.colDesconto.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colDesconto.HeaderText = "Desc (%):";
-            this.colDesconto.Name = "colDesconto";
-            this.colDesconto.Width = 70;
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.DataPropertyName = "Total";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colSubTotal.HeaderText = "Subtotal:";
-            this.colSubTotal.Name = "colSubTotal";
-            this.colSubTotal.Width = 80;
-            // 
-            // colFunc
-            // 
-            this.colFunc.DataPropertyName = "funnome";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Lucida Console", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colFunc.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colFunc.HeaderText = "Responsável:";
-            this.colFunc.Name = "colFunc";
-            this.colFunc.Width = 250;
+            this.progressBar1.Location = new System.Drawing.Point(481, 550);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(395, 23);
+            this.progressBar1.TabIndex = 47;
+            this.progressBar1.Visible = false;
             // 
             // FormVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1331, 585);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.textBoxObs);
             this.Controls.Add(this.pictureBoxConcluido);
             this.Controls.Add(this.pictureBoxCancel);
@@ -730,5 +752,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDesconto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFunc;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

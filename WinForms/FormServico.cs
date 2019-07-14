@@ -57,7 +57,7 @@ namespace WinForms
             textBoxNome.Text = infoCliente.cliid + " - " + infoCliente.clinome;
 
             thread = new Thread(PreencherFormThread);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
 
             if (colecaoEnd != null)

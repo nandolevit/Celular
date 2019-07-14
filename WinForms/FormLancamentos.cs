@@ -50,7 +50,7 @@ namespace WinForms
             Inicializador();
             grid = entrada;
             thread = new Thread(Consultar);
-            form1.ExecutarThread(thread);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
             this.Activate();
             ConsultarLancamento();
             alterar = true;
@@ -125,7 +125,7 @@ namespace WinForms
                 cat = Convert.ToInt32(textBoxCodCat.Text);
                 valor = Convert.ToDecimal(textBoxValor.Text);
                 thread = new Thread(Salvar);
-                form1.ExecutarThread(thread);
+                form1.ExecutarThread(thread, progressBar1, labelBarra);
                 Fechar();
             }
         }
