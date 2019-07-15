@@ -21,6 +21,58 @@ namespace Negocios
 
         AccessDbMySql accessDbMySql = new AccessDbMySql();
 
+        public AparelhoInfo ConsultarAparelhoId(int id)
+        {
+            if (accessDbMySql.Conectar(EmpConexao))
+            {
+                accessDbMySql.AddParametrosMySql("@id", id);
+                DataTable dataTable = accessDbMySql.dataTableMySql("spConsultarAparelhoId");
+
+                if (dataTable != null)
+                    return PreencherAparelho(dataTable)[0];
+                else
+                    return null;
+            }
+            else
+                return null;
+        }
+
+        public AparelhoColecao ConsultarAparelhoClienteId(int id)
+        {
+            if (accessDbMySql.Conectar(EmpConexao))
+            {
+                accessDbMySql.AddParametrosMySql("@id", id);
+                DataTable dataTable = accessDbMySql.dataTableMySql("spConsultarAparelhoClienteId");
+
+                if (dataTable != null)
+                    return PreencherAparelho(dataTable);
+                else
+                    return null;
+            }
+            else
+                return null;
+        }
+
+        private AparelhoColecao PreencherAparelho(DataTable dataTable)
+        {
+            AparelhoColecao colecao = new AparelhoColecao();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                AparelhoInfo aparelho = new AparelhoInfo
+                {
+                    apadescricao = Convert.ToString(row["apadescricao"]),
+                    apaid = Convert.ToInt32(row["apaid"]),
+                    apaidaparelho = Convert.ToInt32(row["apaidaparelho"]),
+                    apaidcliente = Convert.ToInt32(row["apaidcliente"]),
+                    apaidtipoaparelho = Convert.ToInt32(row["apaidtipoaparelho"])
+                };
+
+                colecao.Add(aparelho);
+            }
+
+            return colecao;
+        }
+
         public int InsertIphoneCelular(IphoneCelularInfo phone)
         {
             if (accessDbMySql.Conectar(EmpConexao))

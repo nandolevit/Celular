@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AparelhoColecao.cs" />
+    <Compile Include="AparelhoInfo.cs" />
     <Compile Include="EntradaDiversosColecao.cs" />
     <Compile Include="EntradaDiversosInfo.cs" />
     <Compile Include="CaixaAbrirColecao.cs" />

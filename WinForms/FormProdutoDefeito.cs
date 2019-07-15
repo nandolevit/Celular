@@ -16,59 +16,72 @@ namespace WinForms
     public partial class FormProdutoDefeito : Form
     {
         Form1 form1 = new Form1();
-        ServicoNegocio servicoNegocio = new ServicoNegocio(Form1.Empresa.empconexao);
+        ServicoNegocio negocioServ = new ServicoNegocio(Form1.Empresa.empconexao);
         //public string DefeitoInfo { get; set; }
 
         Thread thread;
         ClienteInfo infoCliente;
-        //ProdEletroColecao colecaoEletro;
-        ServicoColecao colecaoServ;
+        AparelhoColecao colecaoAparelho;
+        IphoneCelularInfo infoCelular;
+        AparelhoInfo infoAparelho;
         public string[] desc = new string[4];
 
         public FormProdutoDefeito(ClienteInfo cliente)
+        {
+            Inicializar();
+            infoCliente = cliente;
+
+            thread = new Thread(ConsultarAparelhoCliente);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
+            
+        }
+
+        public FormProdutoDefeito(IphoneCelularInfo phone)
+        {
+            Inicializar();
+            infoCelular = phone;
+
+            thread = new Thread(ConsultarAparelho);
+            form1.ExecutarThread(thread, progressBar1, labelBarra);
+
+            if (infoCelular != null)
+            {
+                textBoxCodProd.Text = string.Format("{0:0000}", infoAparelho.apaid);
+                textBoxProdDescricao.Text = infoAparelho.apadescricao;
+            }
+
+        }
+
+        private void Inicializar()
         {
             InitializeComponent();
             FormFormat formFormat = new FormFormat(this);
             formFormat.formatar();
             this.AcceptButton = buttonSalvar;
-            infoCliente = cliente;
-            ConsultarTipoServId("1");
             textBoxCodProd.Select();
 
-            thread = new Thread(ConsultarEletro);
-            form1.ExecutarThread(thread, progressBar1, labelBarra);
-            this.Activate();
-            
         }
 
-        private void ConsultarEletro()
+        private void ConsultarAparelho()
         {
-            ////colecaoServ = servicoNegocio.ConsultarOsPorIdEletro(eletro.idCadEle);
-            //colecaoEletro = servicoNegocio.ConsultarEletroCliente(infoCliente.cliid);
+            infoAparelho = negocioServ.ConsultarAparelhoId(infoCelular.celid);
             Form1.encerrarThread = true;
         }
-        private void AbrirCadEletro()
-        {
-            //FormCadEletro formCadProdCliente = new FormCadEletro(infoCliente);
-            //formCadProdCliente.ShowDialog(this);
-            //formCadProdCliente.Dispose();
 
-            //if (formCadProdCliente.DialogResult == DialogResult.Yes)
-            //{
-            //    textBoxCodProd.Text = string.Format("{0:000}", formCadProdCliente.SelecionadoEletro.idCadEle);
-            //    textBoxProdDescricao.Text = formCadProdCliente.SelecionadoEletro.descricao;
-            //    textBoxDefeito.Select();
-            //}
+        private void ConsultarAparelhoCliente()
+        {
+            colecaoAparelho = negocioServ.ConsultarAparelhoClienteId(infoCliente.cliid);
+            textBoxDefeito.Select();
+            Form1.encerrarThread = true;
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrEmpty(textBoxDefeito.Text.Trim()) || string.IsNullOrEmpty(textBoxCodProd.Text) || string.IsNullOrEmpty(textBoxCodTipo.Text)))
+            if (!(string.IsNullOrEmpty(textBoxDefeito.Text.Trim()) || string.IsNullOrEmpty(textBoxCodProd.Text)))
             {
                 desc[0] = textBoxProdDescricao.Text;
                 desc[1] = textBoxDefeito.Text;
                 desc[2] = textBoxCodProd.Text;
-                desc[3] = textBoxCodTipo.Text;
 
                 this.DialogResult = DialogResult.Yes;
             }
@@ -79,11 +92,6 @@ namespace WinForms
         private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void textBoxCodTipo_Leave(object sender, EventArgs e)
-        {
-            ConsultarTipoServId(textBoxCodTipo.Text);
         }
 
         private void ConsultarTipoServId(string id)
@@ -145,40 +153,6 @@ namespace WinForms
             //    AbrirCadEletro();
         }
 
-        private void buttonAddEletro_Click(object sender, EventArgs e)
-        {
-            AbrirCadEletro();
-        }
-
-        private void buttonBuscarTipo_Click(object sender, EventArgs e)
-        {
-            //TipoServColecao tipoServColecao = new TipoServColecao();
-            Form_ConsultarColecao form_ConsultarColecao = new Form_ConsultarColecao();
-
-            //tipoServColecao = servicoNegocio.ConsultarTipoServ();
-
-            //foreach (TipoServInfo tipo in tipoServColecao)
-            //{
-            //    Form_Consultar form_Consultar = new Form_Consultar
-            //    {
-            //        Cod = string.Format("{0:000}", tipo.TipId),
-            //        Descricao = tipo.TipDescricao
-            //    };
-
-            //    form_ConsultarColecao.Add(form_Consultar);
-            //}
-
-            FormConsultar_Cod_Descricao formConsultar_Cod_Descricao = new FormConsultar_Cod_Descricao(form_ConsultarColecao, "Tipo de serviço!");
-            formConsultar_Cod_Descricao.ShowDialog(this);
-
-            if (formConsultar_Cod_Descricao.DialogResult == DialogResult.Yes)
-            {
-                textBoxCodTipo.Text = formConsultar_Cod_Descricao.Selecionado.Cod;
-                labelTipoDescricao.Text = formConsultar_Cod_Descricao.Selecionado.Descricao;
-            }
-
-            formConsultar_Cod_Descricao.Dispose();
-        }
 
         private void FormProdutoDefeito_Load(object sender, EventArgs e)
         {

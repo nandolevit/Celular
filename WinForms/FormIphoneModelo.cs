@@ -6,7 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 using Negocios;
@@ -16,6 +16,8 @@ namespace WinForms
 {
     public partial class FormIphoneModelo : Form
     {
+        Thread thread;
+        Form1 form1 = new Form1();
         IphoneModeloColecao colecaoIphone;
         IphoneModeloInfo infoIphone;
         ServicoNegocio negocioServ = new ServicoNegocio(Form1.Empresa.empconexao);
@@ -23,7 +25,8 @@ namespace WinForms
         IphoneModeloCorColecao colecaoCorSelecionada;
         CodDescricaoColecao colecaoCores;
         ClienteInfo infoCliente;
-        IphoneCelularInfo iphone;
+        IphoneCelularInfo infoCelular;
+        public IphoneCelularInfo SelecionadoIphone { get; set; }
         int cod = 0;
        
         public FormIphoneModelo()
@@ -42,6 +45,7 @@ namespace WinForms
             InitializeComponent();
             FormFormat formFormat = new FormFormat(this);
             formFormat.formatar();
+            this.AcceptButton = buttonSalvar;
 
             comboBoxModelo.ValueMember = "iphmodid";
             comboBoxModelo.DisplayMember = "iphmoddescricao";
@@ -175,24 +179,32 @@ namespace WinForms
         private void ButtonSalvar_Click(object sender, EventArgs e)
         {
             if (FormMessage.ShowMessegeQuestion("Deseja salvar?") == DialogResult.Yes)
-                Salvar();
+            {
+                buttonSalvar.Enabled = false;
+                PreencherCelular();
+                labelBarra.Visible = true;
+                thread = new Thread(Salvar);
+                form1.ExecutarThread(thread, progressBar1, labelBarra);
+            }
         }
 
         private void Salvar()
         {
-            PreencherCelular();
-            iphone.celid = negocioServ.InsertIphoneCelular(iphone);
+            infoCelular.celid = negocioServ.InsertIphoneCelular(infoCelular);
+            SelecionadoIphone = infoCelular;
+            Form1.encerrarThread = true;
+            this.DialogResult = DialogResult.Yes;
         }
 
         private void PreencherCelular()
         {
-            iphone = new IphoneCelularInfo
+            infoCelular = new IphoneCelularInfo
             {
                 celanocompra = textBoxAnoCompra.Text,
                 celcapacidade = textBoxCap.Text,
                 celcor = textBoxCor.Text,
                 celid = 0,
-                celidcliente = 206,
+                celidcliente = infoCliente.cliid,
                 celidmodiphone = infoIphone.iphmodid,
                 celimei = textBoxImei.Text,
                 celmodelo = textBoxNumMod.Text,

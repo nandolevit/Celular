@@ -132,7 +132,7 @@ namespace WinForms
             
         }
 
-        private void PreencherFormClienteLuizFernando()
+        private void PreencherFormClienteTeste()
         {
             textBoxId.Text = "0";
             maskedTextBoxCpf.Text = "66440141000133";
@@ -250,8 +250,22 @@ namespace WinForms
                 PreencherClienteInfo();
                 SalvarThread();
 
-                FormMessage.ShowMessegeInfo("Registro salvo com sucesso!");
+                //FormMessage.ShowMessegeInfo("Registro salvo com sucesso!");
 
+                FormServicoTipo formServicoTipo = new FormServicoTipo();
+                if (formServicoTipo.ShowDialog(this) == DialogResult.Yes)
+                {
+                    FormIphoneModelo formIphoneModelo = new FormIphoneModelo(infoCliente);
+                    if(formIphoneModelo.ShowDialog(this) == DialogResult.Yes)
+                    {
+                        formIphoneModelo.Dispose();
+                        FormProdutoDefeito formProdutoDefeito = new FormProdutoDefeito(formIphoneModelo.SelecionadoIphone);
+                        formProdutoDefeito.ShowDialog(this);
+                        formProdutoDefeito.Dispose();
+                    }
+                }
+
+                formServicoTipo.Dispose();
                 this.Close();
             }
         }
@@ -409,9 +423,6 @@ namespace WinForms
         {
             thread = new Thread(Salvar);
             form1.ExecutarThread(thread, progressBar1, labelBarra);
-
-            this.Close();
-            
         }
 
         private void Salvar()
@@ -509,7 +520,7 @@ namespace WinForms
             //preencher o formulário com os meus dados para testes
             if (cpf == "71992776512")
             {
-                PreencherFormClienteLuizFernando();
+                PreencherFormClienteTeste();
                 return;
             }
 

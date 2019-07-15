@@ -41,7 +41,6 @@
             this.labelCapacidade = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxCor = new System.Windows.Forms.ComboBox();
-            this.pictureBoxImagem = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -88,7 +87,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).BeginInit();
+            this.pictureBoxImagem = new System.Windows.Forms.PictureBox();
+            this.labelBarra = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.groupBoxAparelho = new System.Windows.Forms.GroupBox();
+            this.radioButtonIphone = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panelPrincipal.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -103,6 +107,8 @@
             this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.groupBoxCaracteristica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).BeginInit();
+            this.groupBoxAparelho.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxDetalhes
@@ -132,7 +138,7 @@
             this.comboBoxModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxModelo.FormattingEnabled = true;
-            this.comboBoxModelo.Location = new System.Drawing.Point(12, 28);
+            this.comboBoxModelo.Location = new System.Drawing.Point(158, 33);
             this.comboBoxModelo.Name = "comboBoxModelo";
             this.comboBoxModelo.Size = new System.Drawing.Size(212, 21);
             this.comboBoxModelo.TabIndex = 1;
@@ -239,16 +245,6 @@
             this.comboBoxCor.Size = new System.Drawing.Size(144, 21);
             this.comboBoxCor.TabIndex = 8;
             this.comboBoxCor.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCor_SelectedIndexChanged);
-            // 
-            // pictureBoxImagem
-            // 
-            this.pictureBoxImagem.Image = global::WinForms.Properties.Resources.SP727_iphone6s_plus_gold_select_2015;
-            this.pictureBoxImagem.Location = new System.Drawing.Point(3, 3);
-            this.pictureBoxImagem.Name = "pictureBoxImagem";
-            this.pictureBoxImagem.Size = new System.Drawing.Size(211, 262);
-            this.pictureBoxImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxImagem.TabIndex = 14;
-            this.pictureBoxImagem.TabStop = false;
             // 
             // labelTitle
             // 
@@ -710,11 +706,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 12);
+            this.label13.Location = new System.Drawing.Point(158, 17);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(152, 13);
+            this.label13.Size = new System.Drawing.Size(104, 13);
             this.label13.TabIndex = 0;
-            this.label13.Text = "Selecione o Modelo do Iphone";
+            this.label13.Text = "Selecione o Modelo:";
             // 
             // buttonSalvar
             // 
@@ -744,11 +740,78 @@
             this.buttonFechar.UseVisualStyleBackColor = true;
             this.buttonFechar.Click += new System.EventHandler(this.ButtonFechar_Click);
             // 
+            // pictureBoxImagem
+            // 
+            this.pictureBoxImagem.Image = global::WinForms.Properties.Resources.SP727_iphone6s_plus_gold_select_2015;
+            this.pictureBoxImagem.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxImagem.Name = "pictureBoxImagem";
+            this.pictureBoxImagem.Size = new System.Drawing.Size(211, 262);
+            this.pictureBoxImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxImagem.TabIndex = 14;
+            this.pictureBoxImagem.TabStop = false;
+            // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Location = new System.Drawing.Point(9, 423);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(71, 13);
+            this.labelBarra.TabIndex = 48;
+            this.labelBarra.Text = "Carregando...";
+            this.labelBarra.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(9, 439);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(395, 23);
+            this.progressBar1.TabIndex = 49;
+            this.progressBar1.Visible = false;
+            // 
+            // groupBoxAparelho
+            // 
+            this.groupBoxAparelho.Controls.Add(this.radioButton2);
+            this.groupBoxAparelho.Controls.Add(this.radioButtonIphone);
+            this.groupBoxAparelho.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxAparelho.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxAparelho.Name = "groupBoxAparelho";
+            this.groupBoxAparelho.Size = new System.Drawing.Size(140, 42);
+            this.groupBoxAparelho.TabIndex = 50;
+            this.groupBoxAparelho.TabStop = false;
+            this.groupBoxAparelho.Text = "Selecione:";
+            // 
+            // radioButtonIphone
+            // 
+            this.radioButtonIphone.AutoSize = true;
+            this.radioButtonIphone.Checked = true;
+            this.radioButtonIphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonIphone.Location = new System.Drawing.Point(6, 16);
+            this.radioButtonIphone.Name = "radioButtonIphone";
+            this.radioButtonIphone.Size = new System.Drawing.Size(64, 17);
+            this.radioButtonIphone.TabIndex = 0;
+            this.radioButtonIphone.TabStop = true;
+            this.radioButtonIphone.Text = "Iphone";
+            this.radioButtonIphone.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(76, 16);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(50, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Ipad";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // FormIphoneModelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 475);
+            this.Controls.Add(this.groupBoxAparelho);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.label13);
@@ -757,7 +820,6 @@
             this.Name = "FormIphoneModelo";
             this.Text = "Modelo do Iphone";
             this.Load += new System.EventHandler(this.FormIphoneModelo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
             this.panelPrincipal.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -783,6 +845,9 @@
             this.tabPage10.PerformLayout();
             this.groupBoxCaracteristica.ResumeLayout(false);
             this.groupBoxCaracteristica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).EndInit();
+            this.groupBoxAparelho.ResumeLayout(false);
+            this.groupBoxAparelho.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -850,5 +915,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonFechar;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.GroupBox groupBoxAparelho;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButtonIphone;
     }
 }

@@ -328,6 +328,12 @@
     <Compile Include="FormSangria.Designer.cs">
       <DependentUpon>FormSangria.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormServicoTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormServicoTipo.Designer.cs">
+      <DependentUpon>FormServicoTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTextoFormat.cs" />
     <Compile Include="FormUnidade.cs">
       <SubType>Form</SubType>
@@ -480,6 +486,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSangria.resx">
       <DependentUpon>FormSangria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormServicoTipo.resx">
+      <DependentUpon>FormServicoTipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUnidade.resx">
       <DependentUpon>FormUnidade.cs</DependentUpon>
@@ -651,6 +660,8 @@
     <None Include="Resources\icons8_Customer_32.png" />
     <None Include="Resources\iphone-6splus-colors.jpg" />
     <None Include="Resources\SP727-iphone6s-plus-gold-select-2015.png" />
+    <None Include="Resources\icons8_iPhone_32.png" />
+    <None Include="Resources\icons8_iMac_32.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
