@@ -31,20 +31,20 @@ namespace ObjTransfer
         {
             string descricao = string.Empty;
 
-            descricao += string.IsNullOrEmpty(iphdeftouchdisplay) ? "" : "Touch/Display: " + iphdeftouchdisplay + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefcamfrontal) ? "" : "Câmera frontal: " + iphdefcamfrontal + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefsensorprox) ? "" : "Sensor de proximidade: " + iphdefsensorprox + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefhome) ? "" : "Botão home/Touch ID: " + iphdefhome + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefautofrontal) ? "" : "Auto-falante frontal: " + iphdefautofrontal + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefconector) ? "" : "Conector Lightning: " + iphdefconector + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdeffone) ? "" : "Miniconector de fone de ouvido: " + iphdeffone + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefautointerno) ? "" : "Auto-falante interno: " + iphdefautointerno + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefmicrofone) ? "" : "Microfone: " + iphdefmicrofone + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefparafuso) ? "" : "Parafuso da carcaça: " + iphdefparafuso + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefcarcaca) ? "" : "Estado da carcaça: " + iphdefcarcaca + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefcamtraseira) ? "" : "Câmera traseira: " + iphdefcamtraseira + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefmicrofonetraseiro) ? "" : "Microfone traseiro: " + iphdefmicrofonetraseiro + Environment.NewLine + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefflash) ? "" : "Flash: " + iphdefflash + Environment.NewLine + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdeftouchdisplay) ? "" : "**Touch/Display: " + iphdeftouchdisplay + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefcamfrontal) ? "" : "**Câmera frontal: " + iphdefcamfrontal + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefsensorprox) ? "" : "**Sensor de proximidade: " + iphdefsensorprox + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefhome) ? "" : "**Botão home/Touch ID: " + iphdefhome + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefautofrontal) ? "" : "**Auto-falante frontal: " + iphdefautofrontal + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefconector) ? "" : "**Conector Lightning: " + iphdefconector + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdeffone) ? "" : "**Miniconector de fone de ouvido: " + iphdeffone + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefautointerno) ? "" : "**Auto-falante interno: " + iphdefautointerno + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefmicrofone) ? "" : "**Microfone: " + iphdefmicrofone + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefparafuso) ? "" : "**Parafuso da carcaça: " + iphdefparafuso + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefcarcaca) ? "" : "**Estado da carcaça: " + iphdefcarcaca + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefcamtraseira) ? "" : "**Câmera traseira: " + iphdefcamtraseira + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefmicrofonetraseiro) ? "" : "**Microfone traseiro: " + iphdefmicrofonetraseiro + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefflash) ? "" : "**Flash: " + iphdefflash;
 
             return descricao;
         }

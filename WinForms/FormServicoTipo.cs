@@ -20,6 +20,7 @@ namespace WinForms
             InitializeComponent();
             FormFormat formFormat = new FormFormat(this);
             formFormat.formatar();
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void ButtonCelular_Click(object sender, EventArgs e)

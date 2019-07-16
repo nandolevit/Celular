@@ -23,9 +23,6 @@ namespace WinForms
             formFormat.formatar();
             this.Text = titulo;
 
-            for (int i = 0; i < dataGridViewConsultar.ColumnCount; i++)
-                dataGridViewConsultar.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None; 
-
             dataGridViewConsultar.DataSource = consultar;
         }
 

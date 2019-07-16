@@ -35,7 +35,6 @@ namespace WinForms
         ClienteNegocios negocioCliente = new ClienteNegocios(Form1.Empresa.empconexao);
         FuncNegocios funcNegocios = new FuncNegocios(Form1.Empresa.empconexao);
         EmpresaNegocios empresaNegocios = new EmpresaNegocios(Form1.Empresa.empconexao);
-        ClienteNegocios clienteNegocios = new ClienteNegocios(Form1.Empresa.empconexao);
         FornecedorNegocios fornecedorNegocios = new FornecedorNegocios(Form1.Empresa.empconexao);
         
 
@@ -259,7 +258,7 @@ namespace WinForms
                     if(formIphoneModelo.ShowDialog(this) == DialogResult.Yes)
                     {
                         formIphoneModelo.Dispose();
-                        FormServico formServico = new FormServico(infoCliente, formIphoneModelo.SelecionadoIphone);
+                        FormServico formServico = new FormServico(infoCliente);
                         formServico.ShowDialog(this);
                         formServico.Dispose();
                     }
@@ -432,19 +431,19 @@ namespace WinForms
                 case 0:
                     if (infoCliente.cliid == 0)
                     {
-                        idSave = clienteNegocios.Inserir(infoCliente);
+                        idSave = negocioCliente.Inserir(infoCliente);
 
                         if (idSave > 0)
                         {
                             infoCliente.cliid = idSave;
                             infoEnd.endidcliente = idSave;
-                            clienteNegocios.InserirEndereco(infoEnd);
+                            negocioCliente.InserirEndereco(infoEnd);
                         }
                     }
                     else
                     {
-                        idSave = clienteNegocios.UpdateCliente(infoCliente);
-                        clienteNegocios.UpdateEndereco(infoEnd);
+                        idSave = negocioCliente.UpdateCliente(infoCliente);
+                        negocioCliente.UpdateEndereco(infoEnd);
                     }
 
                     break;
@@ -475,13 +474,13 @@ namespace WinForms
             switch (modSave)
             {
                 case 0:
-                    idSave = clienteNegocios.Inserir(infoCliente);
+                    idSave = negocioCliente.Inserir(infoCliente);
 
                     if (idSave > 0)
                     {
                         infoCliente.cliid = idSave;
                         infoEnd.endidcliente = idSave;
-                        clienteNegocios.InserirEndereco(infoEnd);
+                        negocioCliente.InserirEndereco(infoEnd);
                     }
                     break;
                 case 1:
@@ -600,7 +599,7 @@ namespace WinForms
         {
             CepInfo cepInfo = new CepInfo();
 
-            cepInfo = clienteNegocios.ConsultarCep(maskedTextBoxCep.Text);
+            cepInfo = negocioCliente.ConsultarCep(maskedTextBoxCep.Text);
 
             if (cepInfo != null)
             {

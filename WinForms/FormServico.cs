@@ -24,7 +24,9 @@ namespace WinForms
         FuncInfo responsavel;
         FuncColecao colecaofunc;
         ServicoColecao colecaoServico;
-        IphoneCelularInfo infoCelular;
+        //IphoneCelularInfo infoCelular;
+        AparelhoInfo infoAparelho;
+        IphoneDefeitoInfo infoDefeito;
 
         ClienteNegocios negociosCliente = new ClienteNegocios(Form1.Empresa.empconexao);
         ServicoNegocio negocioServ = new ServicoNegocio(Form1.Empresa.empconexao);
@@ -40,13 +42,13 @@ namespace WinForms
             PreencherForm();
         }
 
-        public FormServico(ClienteInfo cliente, IphoneCelularInfo celular)
-        {
-            Inicializar();
-            infoCliente = cliente;
-            infoCelular = celular;
-            PreencherForm();
-        }
+        //public FormServico(ClienteInfo cliente, IphoneCelularInfo celular)
+        //{
+        //    Inicializar();
+        //    infoCliente = cliente;
+        //    infoCelular = celular;
+        //    PreencherForm();
+        //}
 
         public FormServico()
         {
@@ -58,6 +60,7 @@ namespace WinForms
             InitializeComponent();
             FormFormat formFormat = new FormFormat(this);
             formFormat.formatar();
+            textBoxCaracteristica.CharacterCasing = CharacterCasing.Normal;
             colecaoServico = new ServicoColecao();
         }
 
@@ -67,17 +70,11 @@ namespace WinForms
 
             thread = new Thread(PreencherFormThread);
             form1.ExecutarThread(thread, progressBar1, labelBarra);
-            this.Activate();
 
             if (colecaoEnd != null)
             {
                 infoEnd = colecaoEnd[0];
                 PreencherEnd();
-
-                if (colecaoEnd.Count > 1)
-                    buttonEnd.Enabled = true;
-                else
-                    buttonEnd.Enabled = false;
             }
             else
             {
@@ -122,19 +119,19 @@ namespace WinForms
         private void AbrirDefeito()
         {
             FormProdutoDefeito formProdutoDefeito = new FormProdutoDefeito(infoCliente);
-            formProdutoDefeito.ShowDialog(this);
-            formProdutoDefeito.Dispose();
 
-            if (formProdutoDefeito.DialogResult == DialogResult.Yes)
+            if (formProdutoDefeito.ShowDialog(this) == DialogResult.Yes)
             {
-                //textBoxDescricao.Text = formProdutoDefeito.desc[0];
-                //textBoxDefeito.Text = formProdutoDefeito.desc[1];
-                //eletro = Convert.ToInt32(formProdutoDefeito.desc[2]);
-                //tipo = Convert.ToInt32(formProdutoDefeito.desc[3]);
-                textBoxObs.Select();
+                infoAparelho = formProdutoDefeito.SelecionadoAparelho;
+                infoDefeito = formProdutoDefeito.SelecionandoDefeito;
+                textBoxDescricao.Text = infoAparelho.apadescricao;
+                textBoxDefeito.Text = infoDefeito.iphdefdefeito;
+                textBoxCaracteristica.Text = infoDefeito.ToString();
+                textBoxCaracteristica.Select();
                 buttonSalvar.Enabled = false;
                 buttonAddServico.Enabled = true;
             }
+            formProdutoDefeito.Dispose();
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
@@ -407,34 +404,9 @@ namespace WinForms
             }
         }
 
-        private void ButtonEnd_Click(object sender, EventArgs e)
-        {
-            //FormEnderecoLista formEnderecoLista = new FormEnderecoLista(colecaoEnd);
-            //formEnderecoLista.ShowDialog(this);
-            //formEnderecoLista.Dispose();
-
-            //if (formEnderecoLista.DialogResult == DialogResult.Yes)
-            //{
-            //    infoEnd = formEnderecoLista.SelecionandoEnd;
-            //    PreencherEnd();
-            //}
-        }
-
         private void TextBoxObs_Leave(object sender, EventArgs e)
         {
             buttonAddServico.Select();
-        }
-
-        private void ButtonNota_Click(object sender, EventArgs e)
-        {
-            //FormNotaFiscal formNotaFiscal = new FormNotaFiscal(infoCliente);
-            //formNotaFiscal.ShowDialog(this);
-            //formNotaFiscal.Dispose();
-        }
-
-        private void DataGridViewServico_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            ServGrarantia();
         }
 
         private void FrmServico_FormClosed(object sender, FormClosedEventArgs e)

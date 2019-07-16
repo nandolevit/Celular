@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormServico));
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.labelNome = new System.Windows.Forms.Label();
@@ -51,14 +51,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxResponsavel = new System.Windows.Forms.TextBox();
             this.labelObs = new System.Windows.Forms.Label();
-            this.textBoxObs = new System.Windows.Forms.TextBox();
+            this.textBoxCaracteristica = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButtonNao = new System.Windows.Forms.RadioButton();
             this.radioButtonSim = new System.Windows.Forms.RadioButton();
             this.groupBoxServico = new System.Windows.Forms.GroupBox();
             this.buttonCliente = new System.Windows.Forms.Button();
-            this.buttonEnd = new System.Windows.Forms.Button();
             this.buttonAddTec = new System.Windows.Forms.Button();
             this.buttonBuscarTec = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -106,7 +105,7 @@
             this.textBoxEnd.Location = new System.Drawing.Point(9, 69);
             this.textBoxEnd.Name = "textBoxEnd";
             this.textBoxEnd.ReadOnly = true;
-            this.textBoxEnd.Size = new System.Drawing.Size(728, 20);
+            this.textBoxEnd.Size = new System.Drawing.Size(760, 20);
             this.textBoxEnd.TabIndex = 6;
             this.textBoxEnd.TabStop = false;
             // 
@@ -181,7 +180,6 @@
             this.dataGridViewServico.RowHeadersVisible = false;
             this.dataGridViewServico.Size = new System.Drawing.Size(783, 99);
             this.dataGridViewServico.TabIndex = 2;
-            this.dataGridViewServico.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewServico_RowEnter);
             // 
             // colOs
             // 
@@ -218,9 +216,9 @@
             // colTaxa
             // 
             this.colTaxa.DataPropertyName = "sertaxa";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colTaxa.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colTaxa.DefaultCellStyle = dataGridViewCellStyle2;
             this.colTaxa.HeaderText = "Taxa:";
             this.colTaxa.Name = "colTaxa";
             this.colTaxa.ReadOnly = true;
@@ -269,16 +267,16 @@
             this.labelObs.TabIndex = 15;
             this.labelObs.Text = "Características do aparelho:";
             // 
-            // textBoxObs
+            // textBoxCaracteristica
             // 
-            this.textBoxObs.Location = new System.Drawing.Point(9, 196);
-            this.textBoxObs.Multiline = true;
-            this.textBoxObs.Name = "textBoxObs";
-            this.textBoxObs.ReadOnly = true;
-            this.textBoxObs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxObs.Size = new System.Drawing.Size(768, 190);
-            this.textBoxObs.TabIndex = 16;
-            this.textBoxObs.Leave += new System.EventHandler(this.TextBoxObs_Leave);
+            this.textBoxCaracteristica.Location = new System.Drawing.Point(9, 196);
+            this.textBoxCaracteristica.Multiline = true;
+            this.textBoxCaracteristica.Name = "textBoxCaracteristica";
+            this.textBoxCaracteristica.ReadOnly = true;
+            this.textBoxCaracteristica.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxCaracteristica.Size = new System.Drawing.Size(768, 190);
+            this.textBoxCaracteristica.TabIndex = 16;
+            this.textBoxCaracteristica.Leave += new System.EventHandler(this.TextBoxObs_Leave);
             // 
             // label1
             // 
@@ -333,11 +331,10 @@
             this.groupBoxServico.Controls.Add(this.labelEnd);
             this.groupBoxServico.Controls.Add(this.buttonCliente);
             this.groupBoxServico.Controls.Add(this.textBoxDescricao);
-            this.groupBoxServico.Controls.Add(this.buttonEnd);
             this.groupBoxServico.Controls.Add(this.labelDescricao);
             this.groupBoxServico.Controls.Add(this.labelObs);
             this.groupBoxServico.Controls.Add(this.textBoxDefeito);
-            this.groupBoxServico.Controls.Add(this.textBoxObs);
+            this.groupBoxServico.Controls.Add(this.textBoxCaracteristica);
             this.groupBoxServico.Controls.Add(this.labelDefeito);
             this.groupBoxServico.Controls.Add(this.buttonAddTec);
             this.groupBoxServico.Controls.Add(this.dateTimePickerData);
@@ -365,18 +362,6 @@
             this.buttonCliente.TabIndex = 2;
             this.buttonCliente.UseVisualStyleBackColor = true;
             this.buttonCliente.Click += new System.EventHandler(this.ButtonCliente_Click);
-            // 
-            // buttonEnd
-            // 
-            this.buttonEnd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonEnd.BackgroundImage")));
-            this.buttonEnd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonEnd.Enabled = false;
-            this.buttonEnd.Location = new System.Drawing.Point(743, 67);
-            this.buttonEnd.Name = "buttonEnd";
-            this.buttonEnd.Size = new System.Drawing.Size(26, 23);
-            this.buttonEnd.TabIndex = 7;
-            this.buttonEnd.UseVisualStyleBackColor = true;
-            this.buttonEnd.Click += new System.EventHandler(this.ButtonEnd_Click);
             // 
             // buttonAddTec
             // 
@@ -560,8 +545,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxResponsavel;
         private System.Windows.Forms.Label labelObs;
-        private System.Windows.Forms.TextBox textBoxObs;
-        private System.Windows.Forms.Button buttonEnd;
+        private System.Windows.Forms.TextBox textBoxCaracteristica;
         private System.Windows.Forms.Button buttonCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;

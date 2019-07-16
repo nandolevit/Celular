@@ -92,14 +92,23 @@ namespace WinForms
             if (colecaoAparelho != null)
             {
                 if (colecaoAparelho.Count > 1)
-                {
-
-                }
+                    AbrirListaAparelho();
                 else
                 {
+                    infoAparelho = colecaoAparelho[0];
                     textBoxCodProd.Text = string.Format("{0:0000}", colecaoAparelho[0].apaid);
                     textBoxProdDescricao.Text = colecaoAparelho[0].apadescricao;
                 }
+            }
+            else
+            {
+                FormIphoneModelo formIphoneModelo = new FormIphoneModelo(infoCliente);
+                if(formIphoneModelo.ShowDialog(this) == DialogResult.Yes)
+                    infoAparelho = negocioServ.ConsultarAparelhoId(formIphoneModelo.SelecionadoIphone.celid);
+
+                textBoxCodProd.Text = string.Format("{0:00000}", infoAparelho.apaidaparelho);
+                textBoxProdDescricao.Text = infoAparelho.apadescricao;
+                formIphoneModelo.Dispose();
             }
         }
 
@@ -110,18 +119,34 @@ namespace WinForms
             {
                 Form_Consultar form_Consultar = new Form_Consultar
                 {
-
+                    Cod = string.Format("{0:00000}", aparelho.apaid),
+                    Descricao = aparelho.apadescricao
                 };
+
+                colecao.Add(form_Consultar);
+            }
+
+            FormConsultar_Cod_Descricao formConsultar_Cod_Descricao = new FormConsultar_Cod_Descricao(colecao, "Aparelho");
+            formConsultar_Cod_Descricao.ShowDialog(this);
+            formConsultar_Cod_Descricao.Dispose();
+
+            if (formConsultar_Cod_Descricao.DialogResult == DialogResult.Yes)
+            {
+                Form_Consultar consultar = formConsultar_Cod_Descricao.Selecionado;
+                textBoxCodProd.Text = consultar.Cod;
+                textBoxProdDescricao.Text = consultar.Descricao;
+                infoAparelho = negocioServ.ConsultarAparelhoId(Convert.ToInt32(consultar.Cod));
+                SelecionadoAparelho = infoAparelho;
             }
         }
 
         private void Salvar()
         {
             PreencherDefeito();
-            ExecutarSalva();
+            ExecutarSalvar();
         }
 
-        private void ExecutarSalva()
+        private void ExecutarSalvar()
         {
             if (negocioServ.InsertIphoneDefeito(infoDefeito) > 0)
             {
@@ -156,6 +181,11 @@ namespace WinForms
                 iphdefsensorprox = textBoxSensor.Text,
                 iphdeftouchdisplay = textBoxDisplay.Text
             };
+        }
+
+        private void ButtonBuscarAparelho_Click(object sender, EventArgs e)
+        {
+            AbrirListaAparelho();
         }
     }
 }

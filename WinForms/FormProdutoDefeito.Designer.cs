@@ -156,6 +156,7 @@
             this.buttonBuscarAparelho.Size = new System.Drawing.Size(20, 20);
             this.buttonBuscarAparelho.TabIndex = 1;
             this.buttonBuscarAparelho.UseVisualStyleBackColor = true;
+            this.buttonBuscarAparelho.Click += new System.EventHandler(this.ButtonBuscarAparelho_Click);
             // 
             // groupBoxDecricao
             // 

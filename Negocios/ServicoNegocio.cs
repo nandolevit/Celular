@@ -65,12 +65,12 @@ namespace Negocios
                 accessDbMySql.AddParametrosMySql("@fone", defeito.iphdeffone);
                 accessDbMySql.AddParametrosMySql("@home", defeito.iphdefhome);
                 accessDbMySql.AddParametrosMySql("@id", defeito.iphdefid);
-                accessDbMySql.AddParametrosMySql("@aparelho", defeito.iphdefidaparelho);
+                accessDbMySql.AddParametrosMySql("@phone", defeito.iphdefidaparelho);
                 accessDbMySql.AddParametrosMySql("@microfone", defeito.iphdefmicrofone);
                 accessDbMySql.AddParametrosMySql("@microfonetraseiro", defeito.iphdefmicrofonetraseiro);
                 accessDbMySql.AddParametrosMySql("@obs", defeito.iphdefobs);
                 accessDbMySql.AddParametrosMySql("@parafuso", defeito.iphdefparafuso);
-                accessDbMySql.AddParametrosMySql("@sensorprox", defeito.iphdefsensorprox);
+                accessDbMySql.AddParametrosMySql("@sensor", defeito.iphdefsensorprox);
                 accessDbMySql.AddParametrosMySql("@display", defeito.iphdeftouchdisplay);
 
                 return accessDbMySql.ExecutarScalarMySql("spInsertIphoneDefeito");
