@@ -21,6 +21,112 @@ namespace Negocios
 
         AccessDbMySql accessDbMySql = new AccessDbMySql();
 
+        public int UpdateIphoneDefeito(IphoneDefeitoInfo defeito)
+        {
+            if (accessDbMySql.Conectar(EmpConexao))
+            {
+                accessDbMySql.AddParametrosMySql("@autofrontal", defeito.iphdefautofrontal);
+                accessDbMySql.AddParametrosMySql("@autointerno", defeito.iphdefautointerno);
+                accessDbMySql.AddParametrosMySql("@camfrontal", defeito.iphdefcamfrontal);
+                accessDbMySql.AddParametrosMySql("@camtraseira", defeito.iphdefcamtraseira);
+                accessDbMySql.AddParametrosMySql("@carcaca", defeito.iphdefcarcaca);
+                accessDbMySql.AddParametrosMySql("@conector", defeito.iphdefconector);
+                accessDbMySql.AddParametrosMySql("@defeito", defeito.iphdefdefeito);
+                accessDbMySql.AddParametrosMySql("@flash", defeito.iphdefflash);
+                accessDbMySql.AddParametrosMySql("@fone", defeito.iphdeffone);
+                accessDbMySql.AddParametrosMySql("@home", defeito.iphdefhome);
+                accessDbMySql.AddParametrosMySql("@id", defeito.iphdefid);
+                accessDbMySql.AddParametrosMySql("@aparelho", defeito.iphdefidaparelho);
+                accessDbMySql.AddParametrosMySql("@microfone", defeito.iphdefmicrofone);
+                accessDbMySql.AddParametrosMySql("@microfonetraseiro", defeito.iphdefmicrofonetraseiro);
+                accessDbMySql.AddParametrosMySql("@obs", defeito.iphdefobs);
+                accessDbMySql.AddParametrosMySql("@parafuso", defeito.iphdefparafuso);
+                accessDbMySql.AddParametrosMySql("@sensorprox", defeito.iphdefsensorprox);
+                accessDbMySql.AddParametrosMySql("@display", defeito.iphdeftouchdisplay);
+
+                return accessDbMySql.ExecutarScalarMySql("spUpdateIphoneDefeito");
+            }
+            else
+                return 0;
+        }
+
+        public int InsertIphoneDefeito(IphoneDefeitoInfo defeito)
+        {
+            if (accessDbMySql.Conectar(EmpConexao))
+            {
+                accessDbMySql.AddParametrosMySql("@autofrontal", defeito.iphdefautofrontal);
+                accessDbMySql.AddParametrosMySql("@autointerno", defeito.iphdefautointerno);
+                accessDbMySql.AddParametrosMySql("@camfrontal", defeito.iphdefcamfrontal);
+                accessDbMySql.AddParametrosMySql("@camtraseira", defeito.iphdefcamtraseira);
+                accessDbMySql.AddParametrosMySql("@carcaca", defeito.iphdefcarcaca);
+                accessDbMySql.AddParametrosMySql("@conector", defeito.iphdefconector);
+                accessDbMySql.AddParametrosMySql("@defeito", defeito.iphdefdefeito);
+                accessDbMySql.AddParametrosMySql("@flash", defeito.iphdefflash);
+                accessDbMySql.AddParametrosMySql("@fone", defeito.iphdeffone);
+                accessDbMySql.AddParametrosMySql("@home", defeito.iphdefhome);
+                accessDbMySql.AddParametrosMySql("@id", defeito.iphdefid);
+                accessDbMySql.AddParametrosMySql("@aparelho", defeito.iphdefidaparelho);
+                accessDbMySql.AddParametrosMySql("@microfone", defeito.iphdefmicrofone);
+                accessDbMySql.AddParametrosMySql("@microfonetraseiro", defeito.iphdefmicrofonetraseiro);
+                accessDbMySql.AddParametrosMySql("@obs", defeito.iphdefobs);
+                accessDbMySql.AddParametrosMySql("@parafuso", defeito.iphdefparafuso);
+                accessDbMySql.AddParametrosMySql("@sensorprox", defeito.iphdefsensorprox);
+                accessDbMySql.AddParametrosMySql("@display", defeito.iphdeftouchdisplay);
+
+                return accessDbMySql.ExecutarScalarMySql("spInsertIphoneDefeito");
+            }
+            else
+                return 0;
+        }
+
+        public IphoneDefeitoInfo ConsultarIphoneDefeitoId(int id)
+        {
+            if (accessDbMySql.Conectar(EmpConexao))
+            {
+                accessDbMySql.AddParametrosMySql("@phone", id);
+                DataTable dataTable = accessDbMySql.dataTableMySql("spConsultarIphoneDefeitoId");
+                if (dataTable != null)
+                    return PreencherIphoneDefeito(dataTable)[0];
+                else
+                    return null;
+            }
+            else
+                return null;
+        }
+
+        private IphoneDefeitoColecao PreencherIphoneDefeito(DataTable dataTable)
+        {
+            IphoneDefeitoColecao colecao = new IphoneDefeitoColecao();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                IphoneDefeitoInfo defeito = new IphoneDefeitoInfo
+                {
+                    iphdefautofrontal = Convert.ToString(row["iphdefautofrontal"]),
+                    iphdefautointerno = Convert.ToString(row["iphdefautointerno"]),
+                    iphdefcamfrontal = Convert.ToString(row["iphdefcamfrontal"]),
+                    iphdefcamtraseira = Convert.ToString(row["iphdefcamtraseira"]),
+                    iphdefcarcaca = Convert.ToString(row["iphdefcarcaca"]),
+                    iphdefconector = Convert.ToString(row["iphdefconector"]),
+                    iphdefdefeito = Convert.ToString(row["iphdefdefeito"]),
+                    iphdefflash = Convert.ToString(row["iphdefflash"]),
+                    iphdeffone = Convert.ToString(row["iphdeffone"]),
+                    iphdefhome = Convert.ToString(row["iphdefhome"]),
+                    iphdefid = Convert.ToInt32(row["iphdefid"]),
+                    iphdefidaparelho = Convert.ToInt32(row["iphdefidaparelho"]),
+                    iphdefmicrofone = Convert.ToString(row["iphdefmicrofone"]),
+                    iphdefmicrofonetraseiro = Convert.ToString(row["iphdefmicrofonetraseiro"]),
+                    iphdefobs = Convert.ToString(row["iphdefobs"]),
+                    iphdefparafuso = Convert.ToString(row["iphdefparafuso"]),
+                    iphdefsensorprox = Convert.ToString(row["iphdefsensorprox"]),
+                    iphdeftouchdisplay = Convert.ToString(row["iphdeftouchdisplay"])
+                };
+
+                colecao.Add(defeito);
+            }
+
+            return colecao;
+        }
+
         public AparelhoInfo ConsultarAparelhoId(int id)
         {
             if (accessDbMySql.Conectar(EmpConexao))

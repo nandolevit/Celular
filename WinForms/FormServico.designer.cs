@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormServico));
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.labelNome = new System.Windows.Forms.Label();
@@ -39,7 +39,6 @@
             this.labelDefeito = new System.Windows.Forms.Label();
             this.textBoxDefeito = new System.Windows.Forms.TextBox();
             this.dateTimePickerData = new System.Windows.Forms.DateTimePicker();
-            this.labelTaxa = new System.Windows.Forms.Label();
             this.labelData = new System.Windows.Forms.Label();
             this.dataGridViewServico = new System.Windows.Forms.DataGridView();
             this.colOs = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +47,6 @@
             this.colObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTaxa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBoxTaxa = new System.Windows.Forms.TextBox();
             this.textBoxCodTec = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxResponsavel = new System.Windows.Forms.TextBox();
@@ -108,7 +106,7 @@
             this.textBoxEnd.Location = new System.Drawing.Point(9, 69);
             this.textBoxEnd.Name = "textBoxEnd";
             this.textBoxEnd.ReadOnly = true;
-            this.textBoxEnd.Size = new System.Drawing.Size(678, 20);
+            this.textBoxEnd.Size = new System.Drawing.Size(728, 20);
             this.textBoxEnd.TabIndex = 6;
             this.textBoxEnd.TabStop = false;
             // 
@@ -117,9 +115,9 @@
             this.labelDescricao.AutoSize = true;
             this.labelDescricao.Location = new System.Drawing.Point(6, 92);
             this.labelDescricao.Name = "labelDescricao";
-            this.labelDescricao.Size = new System.Drawing.Size(58, 13);
+            this.labelDescricao.Size = new System.Drawing.Size(52, 13);
             this.labelDescricao.TabIndex = 10;
-            this.labelDescricao.Text = "Descrição:";
+            this.labelDescricao.Text = "Aparelho:";
             // 
             // textBoxDescricao
             // 
@@ -127,7 +125,7 @@
             this.textBoxDescricao.Multiline = true;
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.ReadOnly = true;
-            this.textBoxDescricao.Size = new System.Drawing.Size(710, 39);
+            this.textBoxDescricao.Size = new System.Drawing.Size(720, 39);
             this.textBoxDescricao.TabIndex = 11;
             this.textBoxDescricao.TabStop = false;
             // 
@@ -145,7 +143,7 @@
             this.textBoxDefeito.Location = new System.Drawing.Point(9, 160);
             this.textBoxDefeito.Name = "textBoxDefeito";
             this.textBoxDefeito.ReadOnly = true;
-            this.textBoxDefeito.Size = new System.Drawing.Size(760, 20);
+            this.textBoxDefeito.Size = new System.Drawing.Size(768, 20);
             this.textBoxDefeito.TabIndex = 14;
             this.textBoxDefeito.TabStop = false;
             // 
@@ -155,15 +153,6 @@
             this.dateTimePickerData.Name = "dateTimePickerData";
             this.dateTimePickerData.Size = new System.Drawing.Size(229, 20);
             this.dateTimePickerData.TabIndex = 4;
-            // 
-            // labelTaxa
-            // 
-            this.labelTaxa.AutoSize = true;
-            this.labelTaxa.Location = new System.Drawing.Point(725, 56);
-            this.labelTaxa.Name = "labelTaxa";
-            this.labelTaxa.Size = new System.Drawing.Size(34, 13);
-            this.labelTaxa.TabIndex = 8;
-            this.labelTaxa.Text = "&Taxa:";
             // 
             // labelData
             // 
@@ -176,6 +165,8 @@
             // 
             // dataGridViewServico
             // 
+            this.dataGridViewServico.AllowUserToAddRows = false;
+            this.dataGridViewServico.AllowUserToDeleteRows = false;
             this.dataGridViewServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewServico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colOs,
@@ -184,10 +175,11 @@
             this.colObs,
             this.colTaxa,
             this.colData});
-            this.dataGridViewServico.Location = new System.Drawing.Point(12, 372);
+            this.dataGridViewServico.Location = new System.Drawing.Point(12, 494);
             this.dataGridViewServico.Name = "dataGridViewServico";
+            this.dataGridViewServico.ReadOnly = true;
             this.dataGridViewServico.RowHeadersVisible = false;
-            this.dataGridViewServico.Size = new System.Drawing.Size(783, 131);
+            this.dataGridViewServico.Size = new System.Drawing.Size(783, 99);
             this.dataGridViewServico.TabIndex = 2;
             this.dataGridViewServico.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewServico_RowEnter);
             // 
@@ -196,6 +188,7 @@
             this.colOs.DataPropertyName = "serid";
             this.colOs.HeaderText = "OS:";
             this.colOs.Name = "colOs";
+            this.colOs.ReadOnly = true;
             this.colOs.Width = 75;
             // 
             // colDescricao
@@ -203,6 +196,7 @@
             this.colDescricao.DataPropertyName = "serdescricao";
             this.colDescricao.HeaderText = "Descrição:";
             this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
             this.colDescricao.Width = 300;
             // 
             // colDefeito
@@ -210,6 +204,7 @@
             this.colDefeito.DataPropertyName = "serdefeitodescricao";
             this.colDefeito.HeaderText = "Defeito:";
             this.colDefeito.Name = "colDefeito";
+            this.colDefeito.ReadOnly = true;
             this.colDefeito.Width = 200;
             // 
             // colObs
@@ -217,16 +212,18 @@
             this.colObs.DataPropertyName = "serobs";
             this.colObs.HeaderText = "Observações:";
             this.colObs.Name = "colObs";
+            this.colObs.ReadOnly = true;
             this.colObs.Width = 200;
             // 
             // colTaxa
             // 
             this.colTaxa.DataPropertyName = "sertaxa";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colTaxa.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colTaxa.DefaultCellStyle = dataGridViewCellStyle3;
             this.colTaxa.HeaderText = "Taxa:";
             this.colTaxa.Name = "colTaxa";
+            this.colTaxa.ReadOnly = true;
             this.colTaxa.Width = 50;
             // 
             // colData
@@ -234,19 +231,12 @@
             this.colData.DataPropertyName = "serdataagend";
             this.colData.HeaderText = "Data:";
             this.colData.Name = "colData";
+            this.colData.ReadOnly = true;
             this.colData.Width = 200;
-            // 
-            // textBoxTaxa
-            // 
-            this.textBoxTaxa.Location = new System.Drawing.Point(725, 69);
-            this.textBoxTaxa.Name = "textBoxTaxa";
-            this.textBoxTaxa.Size = new System.Drawing.Size(44, 20);
-            this.textBoxTaxa.TabIndex = 9;
-            this.textBoxTaxa.TextChanged += new System.EventHandler(this.textBoxTaxa_TextChanged);
             // 
             // textBoxCodTec
             // 
-            this.textBoxCodTec.Location = new System.Drawing.Point(9, 280);
+            this.textBoxCodTec.Location = new System.Drawing.Point(9, 410);
             this.textBoxCodTec.Name = "textBoxCodTec";
             this.textBoxCodTec.Size = new System.Drawing.Size(30, 20);
             this.textBoxCodTec.TabIndex = 17;
@@ -255,7 +245,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(86, 268);
+            this.label2.Location = new System.Drawing.Point(86, 398);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 20;
@@ -263,7 +253,7 @@
             // 
             // textBoxResponsavel
             // 
-            this.textBoxResponsavel.Location = new System.Drawing.Point(86, 281);
+            this.textBoxResponsavel.Location = new System.Drawing.Point(86, 411);
             this.textBoxResponsavel.Name = "textBoxResponsavel";
             this.textBoxResponsavel.ReadOnly = true;
             this.textBoxResponsavel.Size = new System.Drawing.Size(438, 20);
@@ -275,16 +265,18 @@
             this.labelObs.AutoSize = true;
             this.labelObs.Location = new System.Drawing.Point(6, 183);
             this.labelObs.Name = "labelObs";
-            this.labelObs.Size = new System.Drawing.Size(73, 13);
+            this.labelObs.Size = new System.Drawing.Size(140, 13);
             this.labelObs.TabIndex = 15;
-            this.labelObs.Text = "&Observações:";
+            this.labelObs.Text = "Características do aparelho:";
             // 
             // textBoxObs
             // 
             this.textBoxObs.Location = new System.Drawing.Point(9, 196);
             this.textBoxObs.Multiline = true;
             this.textBoxObs.Name = "textBoxObs";
-            this.textBoxObs.Size = new System.Drawing.Size(760, 60);
+            this.textBoxObs.ReadOnly = true;
+            this.textBoxObs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxObs.Size = new System.Drawing.Size(768, 190);
             this.textBoxObs.TabIndex = 16;
             this.textBoxObs.Leave += new System.EventHandler(this.TextBoxObs_Leave);
             // 
@@ -303,7 +295,7 @@
             // 
             this.groupBox1.Controls.Add(this.radioButtonNao);
             this.groupBox1.Controls.Add(this.radioButtonSim);
-            this.groupBox1.Location = new System.Drawing.Point(607, 262);
+            this.groupBox1.Location = new System.Drawing.Point(615, 394);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(115, 38);
             this.groupBox1.TabIndex = 22;
@@ -352,15 +344,13 @@
             this.groupBoxServico.Controls.Add(this.buttonBuscarTec);
             this.groupBoxServico.Controls.Add(this.buttonAdd);
             this.groupBoxServico.Controls.Add(this.textBoxCodTec);
-            this.groupBoxServico.Controls.Add(this.labelTaxa);
             this.groupBoxServico.Controls.Add(this.label2);
             this.groupBoxServico.Controls.Add(this.labelData);
             this.groupBoxServico.Controls.Add(this.textBoxResponsavel);
             this.groupBoxServico.Controls.Add(this.buttonAddServico);
-            this.groupBoxServico.Controls.Add(this.textBoxTaxa);
             this.groupBoxServico.Location = new System.Drawing.Point(12, 50);
             this.groupBoxServico.Name = "groupBoxServico";
-            this.groupBoxServico.Size = new System.Drawing.Size(783, 316);
+            this.groupBoxServico.Size = new System.Drawing.Size(783, 438);
             this.groupBoxServico.TabIndex = 1;
             this.groupBoxServico.TabStop = false;
             this.groupBoxServico.Text = "Serviço:";
@@ -381,7 +371,7 @@
             this.buttonEnd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonEnd.BackgroundImage")));
             this.buttonEnd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonEnd.Enabled = false;
-            this.buttonEnd.Location = new System.Drawing.Point(693, 67);
+            this.buttonEnd.Location = new System.Drawing.Point(743, 67);
             this.buttonEnd.Name = "buttonEnd";
             this.buttonEnd.Size = new System.Drawing.Size(26, 23);
             this.buttonEnd.TabIndex = 7;
@@ -395,7 +385,7 @@
             this.buttonAddTec.Enabled = false;
             this.buttonAddTec.FlatAppearance.BorderSize = 0;
             this.buttonAddTec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddTec.Location = new System.Drawing.Point(63, 280);
+            this.buttonAddTec.Location = new System.Drawing.Point(63, 410);
             this.buttonAddTec.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAddTec.Name = "buttonAddTec";
             this.buttonAddTec.Size = new System.Drawing.Size(20, 20);
@@ -408,7 +398,7 @@
             this.buttonBuscarTec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonBuscarTec.FlatAppearance.BorderSize = 0;
             this.buttonBuscarTec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBuscarTec.Location = new System.Drawing.Point(43, 280);
+            this.buttonBuscarTec.Location = new System.Drawing.Point(43, 410);
             this.buttonBuscarTec.Name = "buttonBuscarTec";
             this.buttonBuscarTec.Size = new System.Drawing.Size(20, 20);
             this.buttonBuscarTec.TabIndex = 18;
@@ -418,11 +408,11 @@
             // buttonAdd
             // 
             this.buttonAdd.BackgroundImage = global::WinForms.Properties.Resources.icons8_Add_New_64;
-            this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonAdd.Enabled = false;
             this.buttonAdd.FlatAppearance.BorderSize = 0;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Location = new System.Drawing.Point(725, 105);
+            this.buttonAdd.Location = new System.Drawing.Point(735, 105);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(44, 39);
             this.buttonAdd.TabIndex = 12;
@@ -434,9 +424,9 @@
             this.buttonAddServico.BackgroundImage = global::WinForms.Properties.Resources.add_32;
             this.buttonAddServico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonAddServico.Enabled = false;
-            this.buttonAddServico.Location = new System.Drawing.Point(728, 262);
+            this.buttonAddServico.Location = new System.Drawing.Point(736, 398);
             this.buttonAddServico.Name = "buttonAddServico";
-            this.buttonAddServico.Size = new System.Drawing.Size(41, 40);
+            this.buttonAddServico.Size = new System.Drawing.Size(41, 34);
             this.buttonAddServico.TabIndex = 23;
             this.buttonAddServico.UseVisualStyleBackColor = true;
             this.buttonAddServico.Click += new System.EventHandler(this.buttonAddServico_Click);
@@ -447,7 +437,7 @@
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvar.Image = global::WinForms.Properties.Resources.conf_green;
             this.buttonSalvar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonSalvar.Location = new System.Drawing.Point(618, 509);
+            this.buttonSalvar.Location = new System.Drawing.Point(618, 599);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(85, 40);
             this.buttonSalvar.TabIndex = 6;
@@ -461,7 +451,7 @@
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.Image = global::WinForms.Properties.Resources.exit_red;
             this.buttonFechar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonFechar.Location = new System.Drawing.Point(710, 509);
+            this.buttonFechar.Location = new System.Drawing.Point(710, 599);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(85, 40);
             this.buttonFechar.TabIndex = 7;
@@ -475,7 +465,7 @@
             this.buttonRemover.BackgroundImage = global::WinForms.Properties.Resources.remove_32;
             this.buttonRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonRemover.Enabled = false;
-            this.buttonRemover.Location = new System.Drawing.Point(12, 509);
+            this.buttonRemover.Location = new System.Drawing.Point(12, 599);
             this.buttonRemover.Name = "buttonRemover";
             this.buttonRemover.Size = new System.Drawing.Size(41, 40);
             this.buttonRemover.TabIndex = 3;
@@ -490,7 +480,7 @@
             this.buttonImprimir.FlatAppearance.BorderSize = 0;
             this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImprimir.Location = new System.Drawing.Point(559, 509);
+            this.buttonImprimir.Location = new System.Drawing.Point(559, 599);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(53, 40);
             this.buttonImprimir.TabIndex = 5;
@@ -501,7 +491,7 @@
             // labelBarra
             // 
             this.labelBarra.AutoSize = true;
-            this.labelBarra.Location = new System.Drawing.Point(101, 510);
+            this.labelBarra.Location = new System.Drawing.Point(101, 600);
             this.labelBarra.Name = "labelBarra";
             this.labelBarra.Size = new System.Drawing.Size(71, 13);
             this.labelBarra.TabIndex = 46;
@@ -510,7 +500,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(101, 526);
+            this.progressBar1.Location = new System.Drawing.Point(101, 616);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(395, 23);
             this.progressBar1.TabIndex = 47;
@@ -520,7 +510,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 561);
+            this.ClientSize = new System.Drawing.Size(815, 660);
             this.Controls.Add(this.labelBarra);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBoxServico);
@@ -530,6 +520,7 @@
             this.Controls.Add(this.buttonRemover);
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.dataGridViewServico);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormServico";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmServico_FormClosed);
@@ -556,7 +547,6 @@
         private System.Windows.Forms.TextBox textBoxDefeito;
         private System.Windows.Forms.DateTimePicker dateTimePickerData;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Label labelTaxa;
         private System.Windows.Forms.Label labelData;
         private System.Windows.Forms.DataGridView dataGridViewServico;
         private System.Windows.Forms.Button buttonAddServico;
@@ -564,7 +554,6 @@
         private System.Windows.Forms.Button buttonRemover;
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonFechar;
-        private System.Windows.Forms.TextBox textBoxTaxa;
         private System.Windows.Forms.Button buttonAddTec;
         private System.Windows.Forms.Button buttonBuscarTec;
         private System.Windows.Forms.TextBox textBoxCodTec;

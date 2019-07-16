@@ -22,9 +22,12 @@ namespace WinForms
         Thread thread;
         ClienteInfo infoCliente;
         AparelhoColecao colecaoAparelho;
-        IphoneCelularInfo infoCelular;
+        //IphoneCelularInfo infoCelular;
+        IphoneDefeitoInfo infoDefeito;
         AparelhoInfo infoAparelho;
-        public string[] desc = new string[4];
+
+        public IphoneDefeitoInfo SelecionandoDefeito { get; set; }
+        public AparelhoInfo SelecionadoAparelho { get; set; }
 
         public FormProdutoDefeito(ClienteInfo cliente)
         {
@@ -33,24 +36,24 @@ namespace WinForms
 
             thread = new Thread(ConsultarAparelhoCliente);
             form1.ExecutarThread(thread, progressBar1, labelBarra);
-            
-        }
-
-        public FormProdutoDefeito(IphoneCelularInfo phone)
-        {
-            Inicializar();
-            infoCelular = phone;
-
-            thread = new Thread(ConsultarAparelho);
-            form1.ExecutarThread(thread, progressBar1, labelBarra);
-
-            if (infoCelular != null)
-            {
-                textBoxCodProd.Text = string.Format("{0:0000}", infoAparelho.apaid);
-                textBoxProdDescricao.Text = infoAparelho.apadescricao;
-            }
 
         }
+
+        //public FormProdutoDefeito(ClienteInfo cliente, IphoneCelularInfo phone)
+        //{
+        //    Inicializar();
+        //    infoCelular = phone;
+        //    infoCliente = cliente;
+
+        //    thread = new Thread(ConsultarAparelho);
+        //    form1.ExecutarThread(thread, progressBar1, labelBarra);
+
+        //    if (infoCelular != null)
+        //    {
+        //        textBoxCodProd.Text = string.Format("{0:0000}", infoAparelho.apaid);
+        //        textBoxProdDescricao.Text = infoAparelho.apadescricao;
+        //    }
+        //}
 
         private void Inicializar()
         {
@@ -60,12 +63,6 @@ namespace WinForms
             this.AcceptButton = buttonSalvar;
             textBoxCodProd.Select();
 
-        }
-
-        private void ConsultarAparelho()
-        {
-            infoAparelho = negocioServ.ConsultarAparelhoId(infoCelular.celid);
-            Form1.encerrarThread = true;
         }
 
         private void ConsultarAparelhoCliente()
@@ -79,11 +76,7 @@ namespace WinForms
         {
             if (!(string.IsNullOrEmpty(textBoxDefeito.Text.Trim()) || string.IsNullOrEmpty(textBoxCodProd.Text)))
             {
-                desc[0] = textBoxProdDescricao.Text;
-                desc[1] = textBoxDefeito.Text;
-                desc[2] = textBoxCodProd.Text;
-
-                this.DialogResult = DialogResult.Yes;
+                Salvar();
             }
             else
                 FormMessage.ShowMessegeWarning("Informar o eletrodoméstico e o defeito do aparelho!");
@@ -91,84 +84,78 @@ namespace WinForms
 
         private void buttonFechar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.Cancel;
         }
-
-        private void ConsultarTipoServId(string id)
-        {
-            if (int.TryParse(id, out int cod))
-            {
-                //TipoServInfo tipoServInfo = servicoNegocio.ConsultarTipoServId(cod);
-
-                //if (tipoServInfo != null)
-                //{
-                //    textBoxCodTipo.Text = string.Format("{0:000}", tipoServInfo.TipId);
-                //    labelTipoDescricao.Text = tipoServInfo.TipDescricao;
-                //}
-                //else
-                //    ConsultarTipoServId("1");
-            }
-            else
-            {
-                FormMessage.ShowMessegeWarning("Insira um valor numérico!");
-                ConsultarTipoServId("1");
-            }
-        }
-
-        private void buttonBuscarEletro_Click(object sender, EventArgs e)
-        {
-            AbrirConsultaEletro();
-        }
-
-        private void AbrirConsultaEletro()
-        {
-            Form_ConsultarColecao form_ConsultarColecao = new Form_ConsultarColecao();
-
-            //if (colecaoEletro != null)
-            //{
-            //    foreach (ProdEletroInfo eletro in colecaoEletro)
-            //    {
-            //        Form_Consultar form_Consultar = new Form_Consultar
-            //        {
-            //            Cod = string.Format("{0:000}", eletro.idCadEle),
-            //            Descricao = eletro.descricao
-            //        };
-
-            //        form_ConsultarColecao.Add(form_Consultar);
-            //    }
-
-            //    FormConsultar_Cod_Descricao formConsultar_Cod_Descricao = new FormConsultar_Cod_Descricao(form_ConsultarColecao, "Lista de produtos...");
-            //    formConsultar_Cod_Descricao.ShowDialog(this);
-
-            //    if (formConsultar_Cod_Descricao.DialogResult == DialogResult.Yes)
-            //    {
-            //        textBoxCodProd.Text = formConsultar_Cod_Descricao.Selecionado.Cod;
-            //        textBoxProdDescricao.Text = formConsultar_Cod_Descricao.Selecionado.Descricao;
-            //        textBoxDefeito.Select();
-            //    }
-
-            //    formConsultar_Cod_Descricao.Dispose();
-            //}
-            //else
-            //    AbrirCadEletro();
-        }
-
 
         private void FormProdutoDefeito_Load(object sender, EventArgs e)
         {
-            //if (colecaoEletro == null)
-            //    AbrirCadEletro();
-            //else
-            //{
-            //    if (colecaoEletro.Count > 1)
-            //        AbrirConsultaEletro();
-            //    else
-            //    {
-            //        textBoxCodProd.Text = string.Format("{0:000}", colecaoEletro[0].idCadEle);
-            //        textBoxProdDescricao.Text = colecaoEletro[0].descricao;
-            //        textBoxDefeito.Select();
-            //    }
-            //}
+            if (colecaoAparelho != null)
+            {
+                if (colecaoAparelho.Count > 1)
+                {
+
+                }
+                else
+                {
+                    textBoxCodProd.Text = string.Format("{0:0000}", colecaoAparelho[0].apaid);
+                    textBoxProdDescricao.Text = colecaoAparelho[0].apadescricao;
+                }
+            }
+        }
+
+        private void AbrirListaAparelho()
+        {
+            Form_ConsultarColecao colecao = new Form_ConsultarColecao();
+            foreach (AparelhoInfo aparelho in colecaoAparelho)
+            {
+                Form_Consultar form_Consultar = new Form_Consultar
+                {
+
+                };
+            }
+        }
+
+        private void Salvar()
+        {
+            PreencherDefeito();
+            ExecutarSalva();
+        }
+
+        private void ExecutarSalva()
+        {
+            if (negocioServ.InsertIphoneDefeito(infoDefeito) > 0)
+            {
+                SelecionadoAparelho = infoAparelho;
+                SelecionandoDefeito = infoDefeito;
+                this.DialogResult = DialogResult.Yes;
+            }
+            else
+                FormMessage.ShowMessegeWarning("Falha ao tentar salvar, tente novamente!");
+        }
+
+        private void PreencherDefeito()
+        {
+            infoDefeito = new IphoneDefeitoInfo
+            {
+                iphdefautofrontal = textBoxAutoFrontal.Text,
+                iphdefautointerno = textBoxAutoInterno.Text,
+                iphdefcamfrontal = textBoxCamFrontal.Text,
+                iphdefcamtraseira = textBoxCamTraseira.Text,
+                iphdefcarcaca = textBoxCarcaca.Text,
+                iphdefconector = textBoxConector.Text,
+                iphdefdefeito = textBoxDefeito.Text,
+                iphdefflash = textBoxFlash.Text,
+                iphdeffone = textBoxFone.Text,
+                iphdefhome = textBoxHome.Text,
+                iphdefid = 0,
+                iphdefidaparelho = infoAparelho.apaid,
+                iphdefmicrofone = textBoxMicro.Text,
+                iphdefmicrofonetraseiro = textBoxMicroTraseira.Text,
+                iphdefobs = textBoxObs.Text,
+                iphdefparafuso = textBoxParafuso.Text,
+                iphdefsensorprox = textBoxSensor.Text,
+                iphdeftouchdisplay = textBoxDisplay.Text
+            };
         }
     }
 }

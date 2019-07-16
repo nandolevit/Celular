@@ -45,6 +45,18 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxObs = new System.Windows.Forms.TextBox();
+            this.groupBoxCaracteristica = new System.Windows.Forms.GroupBox();
+            this.textBoxResistente = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxModelo = new System.Windows.Forms.TextBox();
+            this.textBoxCor = new System.Windows.Forms.TextBox();
+            this.textBoxNumMod = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxCap = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxAnoCompra = new System.Windows.Forms.TextBox();
             this.labelImei = new System.Windows.Forms.Label();
@@ -72,30 +84,19 @@
             this.textBoxSensores = new System.Windows.Forms.TextBox();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.textBoxCaixa = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxCap = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxNumMod = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxModelo = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxCor = new System.Windows.Forms.TextBox();
-            this.groupBoxCaracteristica = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBoxObs = new System.Windows.Forms.TextBox();
-            this.textBoxResistente = new System.Windows.Forms.TextBox();
+            this.pictureBoxImagem = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
-            this.pictureBoxImagem = new System.Windows.Forms.PictureBox();
             this.labelBarra = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBoxAparelho = new System.Windows.Forms.GroupBox();
-            this.radioButtonIphone = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonIphone = new System.Windows.Forms.RadioButton();
             this.panelPrincipal.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBoxCaracteristica.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControlEspecificacoes.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -106,7 +107,6 @@
             this.tabPage8.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
-            this.groupBoxCaracteristica.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).BeginInit();
             this.groupBoxAparelho.SuspendLayout();
             this.SuspendLayout();
@@ -307,6 +307,129 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados do aparelho:";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(160, 117);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Observações:";
+            // 
+            // textBoxObs
+            // 
+            this.textBoxObs.Location = new System.Drawing.Point(160, 133);
+            this.textBoxObs.Multiline = true;
+            this.textBoxObs.Name = "textBoxObs";
+            this.textBoxObs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxObs.Size = new System.Drawing.Size(412, 108);
+            this.textBoxObs.TabIndex = 8;
+            // 
+            // groupBoxCaracteristica
+            // 
+            this.groupBoxCaracteristica.Controls.Add(this.textBoxResistente);
+            this.groupBoxCaracteristica.Controls.Add(this.label10);
+            this.groupBoxCaracteristica.Controls.Add(this.label11);
+            this.groupBoxCaracteristica.Controls.Add(this.textBoxModelo);
+            this.groupBoxCaracteristica.Controls.Add(this.textBoxCor);
+            this.groupBoxCaracteristica.Controls.Add(this.textBoxNumMod);
+            this.groupBoxCaracteristica.Controls.Add(this.label8);
+            this.groupBoxCaracteristica.Controls.Add(this.label9);
+            this.groupBoxCaracteristica.Controls.Add(this.textBoxCap);
+            this.groupBoxCaracteristica.Location = new System.Drawing.Point(6, 6);
+            this.groupBoxCaracteristica.Name = "groupBoxCaracteristica";
+            this.groupBoxCaracteristica.Size = new System.Drawing.Size(572, 108);
+            this.groupBoxCaracteristica.TabIndex = 0;
+            this.groupBoxCaracteristica.TabStop = false;
+            this.groupBoxCaracteristica.Text = "Características:";
+            // 
+            // textBoxResistente
+            // 
+            this.textBoxResistente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxResistente.Location = new System.Drawing.Point(6, 60);
+            this.textBoxResistente.Multiline = true;
+            this.textBoxResistente.Name = "textBoxResistente";
+            this.textBoxResistente.ReadOnly = true;
+            this.textBoxResistente.Size = new System.Drawing.Size(560, 42);
+            this.textBoxResistente.TabIndex = 8;
+            this.textBoxResistente.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Aparelho:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(417, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(26, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Cor:";
+            // 
+            // textBoxModelo
+            // 
+            this.textBoxModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxModelo.Location = new System.Drawing.Point(6, 32);
+            this.textBoxModelo.Name = "textBoxModelo";
+            this.textBoxModelo.ReadOnly = true;
+            this.textBoxModelo.Size = new System.Drawing.Size(233, 22);
+            this.textBoxModelo.TabIndex = 1;
+            this.textBoxModelo.TabStop = false;
+            // 
+            // textBoxCor
+            // 
+            this.textBoxCor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCor.Location = new System.Drawing.Point(417, 34);
+            this.textBoxCor.Name = "textBoxCor";
+            this.textBoxCor.ReadOnly = true;
+            this.textBoxCor.Size = new System.Drawing.Size(148, 20);
+            this.textBoxCor.TabIndex = 7;
+            this.textBoxCor.TabStop = false;
+            // 
+            // textBoxNumMod
+            // 
+            this.textBoxNumMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNumMod.Location = new System.Drawing.Point(245, 34);
+            this.textBoxNumMod.Name = "textBoxNumMod";
+            this.textBoxNumMod.ReadOnly = true;
+            this.textBoxNumMod.Size = new System.Drawing.Size(93, 20);
+            this.textBoxNumMod.TabIndex = 3;
+            this.textBoxNumMod.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(344, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Capacidade:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(245, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Modelo:";
+            // 
+            // textBoxCap
+            // 
+            this.textBoxCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCap.Location = new System.Drawing.Point(344, 34);
+            this.textBoxCap.Name = "textBoxCap";
+            this.textBoxCap.ReadOnly = true;
+            this.textBoxCap.Size = new System.Drawing.Size(67, 20);
+            this.textBoxCap.TabIndex = 5;
+            this.textBoxCap.TabStop = false;
             // 
             // label7
             // 
@@ -580,128 +703,15 @@
             this.textBoxCaixa.Size = new System.Drawing.Size(558, 216);
             this.textBoxCaixa.TabIndex = 2;
             // 
-            // label8
+            // pictureBoxImagem
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(344, 18);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Capacidade:";
-            // 
-            // textBoxCap
-            // 
-            this.textBoxCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCap.Location = new System.Drawing.Point(344, 34);
-            this.textBoxCap.Name = "textBoxCap";
-            this.textBoxCap.ReadOnly = true;
-            this.textBoxCap.Size = new System.Drawing.Size(67, 20);
-            this.textBoxCap.TabIndex = 5;
-            this.textBoxCap.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(245, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Modelo:";
-            // 
-            // textBoxNumMod
-            // 
-            this.textBoxNumMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumMod.Location = new System.Drawing.Point(245, 34);
-            this.textBoxNumMod.Name = "textBoxNumMod";
-            this.textBoxNumMod.ReadOnly = true;
-            this.textBoxNumMod.Size = new System.Drawing.Size(93, 20);
-            this.textBoxNumMod.TabIndex = 3;
-            this.textBoxNumMod.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Aparelho:";
-            // 
-            // textBoxModelo
-            // 
-            this.textBoxModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxModelo.Location = new System.Drawing.Point(6, 32);
-            this.textBoxModelo.Name = "textBoxModelo";
-            this.textBoxModelo.ReadOnly = true;
-            this.textBoxModelo.Size = new System.Drawing.Size(233, 22);
-            this.textBoxModelo.TabIndex = 1;
-            this.textBoxModelo.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(417, 18);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(26, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Cor:";
-            // 
-            // textBoxCor
-            // 
-            this.textBoxCor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCor.Location = new System.Drawing.Point(417, 34);
-            this.textBoxCor.Name = "textBoxCor";
-            this.textBoxCor.ReadOnly = true;
-            this.textBoxCor.Size = new System.Drawing.Size(148, 20);
-            this.textBoxCor.TabIndex = 7;
-            this.textBoxCor.TabStop = false;
-            // 
-            // groupBoxCaracteristica
-            // 
-            this.groupBoxCaracteristica.Controls.Add(this.textBoxResistente);
-            this.groupBoxCaracteristica.Controls.Add(this.label10);
-            this.groupBoxCaracteristica.Controls.Add(this.label11);
-            this.groupBoxCaracteristica.Controls.Add(this.textBoxModelo);
-            this.groupBoxCaracteristica.Controls.Add(this.textBoxCor);
-            this.groupBoxCaracteristica.Controls.Add(this.textBoxNumMod);
-            this.groupBoxCaracteristica.Controls.Add(this.label8);
-            this.groupBoxCaracteristica.Controls.Add(this.label9);
-            this.groupBoxCaracteristica.Controls.Add(this.textBoxCap);
-            this.groupBoxCaracteristica.Location = new System.Drawing.Point(6, 6);
-            this.groupBoxCaracteristica.Name = "groupBoxCaracteristica";
-            this.groupBoxCaracteristica.Size = new System.Drawing.Size(572, 108);
-            this.groupBoxCaracteristica.TabIndex = 0;
-            this.groupBoxCaracteristica.TabStop = false;
-            this.groupBoxCaracteristica.Text = "Características:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(160, 117);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 13);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Observações:";
-            // 
-            // textBoxObs
-            // 
-            this.textBoxObs.Location = new System.Drawing.Point(160, 133);
-            this.textBoxObs.Multiline = true;
-            this.textBoxObs.Name = "textBoxObs";
-            this.textBoxObs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxObs.Size = new System.Drawing.Size(412, 108);
-            this.textBoxObs.TabIndex = 8;
-            // 
-            // textBoxResistente
-            // 
-            this.textBoxResistente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxResistente.Location = new System.Drawing.Point(6, 60);
-            this.textBoxResistente.Multiline = true;
-            this.textBoxResistente.Name = "textBoxResistente";
-            this.textBoxResistente.ReadOnly = true;
-            this.textBoxResistente.Size = new System.Drawing.Size(560, 42);
-            this.textBoxResistente.TabIndex = 8;
-            this.textBoxResistente.TabStop = false;
+            this.pictureBoxImagem.Image = global::WinForms.Properties.Resources.SP727_iphone6s_plus_gold_select_2015;
+            this.pictureBoxImagem.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxImagem.Name = "pictureBoxImagem";
+            this.pictureBoxImagem.Size = new System.Drawing.Size(211, 262);
+            this.pictureBoxImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxImagem.TabIndex = 14;
+            this.pictureBoxImagem.TabStop = false;
             // 
             // label13
             // 
@@ -740,16 +750,6 @@
             this.buttonFechar.UseVisualStyleBackColor = true;
             this.buttonFechar.Click += new System.EventHandler(this.ButtonFechar_Click);
             // 
-            // pictureBoxImagem
-            // 
-            this.pictureBoxImagem.Image = global::WinForms.Properties.Resources.SP727_iphone6s_plus_gold_select_2015;
-            this.pictureBoxImagem.Location = new System.Drawing.Point(3, 3);
-            this.pictureBoxImagem.Name = "pictureBoxImagem";
-            this.pictureBoxImagem.Size = new System.Drawing.Size(211, 262);
-            this.pictureBoxImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxImagem.TabIndex = 14;
-            this.pictureBoxImagem.TabStop = false;
-            // 
             // labelBarra
             // 
             this.labelBarra.AutoSize = true;
@@ -780,6 +780,17 @@
             this.groupBoxAparelho.TabStop = false;
             this.groupBoxAparelho.Text = "Selecione:";
             // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(76, 16);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(50, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Ipad";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // radioButtonIphone
             // 
             this.radioButtonIphone.AutoSize = true;
@@ -792,17 +803,6 @@
             this.radioButtonIphone.TabStop = true;
             this.radioButtonIphone.Text = "Iphone";
             this.radioButtonIphone.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(76, 16);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Ipad";
-            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // FormIphoneModelo
             // 
@@ -817,6 +817,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.comboBoxModelo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormIphoneModelo";
             this.Text = "Modelo do Iphone";
             this.Load += new System.EventHandler(this.FormIphoneModelo_Load);
@@ -825,6 +826,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBoxCaracteristica.ResumeLayout(false);
+            this.groupBoxCaracteristica.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabControlEspecificacoes.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
@@ -843,8 +846,6 @@
             this.tabPage9.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
-            this.groupBoxCaracteristica.ResumeLayout(false);
-            this.groupBoxCaracteristica.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).EndInit();
             this.groupBoxAparelho.ResumeLayout(false);
             this.groupBoxAparelho.PerformLayout();

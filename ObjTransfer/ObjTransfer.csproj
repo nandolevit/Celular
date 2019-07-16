@@ -105,6 +105,8 @@
     <Compile Include="GridViewVendaPeriodoColecao.cs" />
     <Compile Include="IphoneCelularColecao.cs" />
     <Compile Include="IphoneCelularInfo.cs" />
+    <Compile Include="IphoneDefeitoColecao.cs" />
+    <Compile Include="IphoneDefeitoInfo.cs" />
     <Compile Include="IphoneModeloColecao.cs" />
     <Compile Include="IphoneModeloCorColecao.cs" />
     <Compile Include="IphoneModeloCorInfo.cs" />

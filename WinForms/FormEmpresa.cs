@@ -265,6 +265,7 @@ namespace WinForms
             serializarNegocios.SerializarObjeto(iphoneModeloColecao, Form1.FileIphone);
             serializarNegocios.SerializarObjeto(iphoneCorColecao, Form1.FileIphoneCores);
             Form1.encerrarThread = true;
+            FormMessage.ShowMessegeWarning("O sistema foi configurado com sucesso... O mesmo será encerrado, favor abra-o novamente!");
         }
 
         private void FormEmpresa_Load(object sender, EventArgs e)

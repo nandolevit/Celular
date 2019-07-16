@@ -259,9 +259,9 @@ namespace WinForms
                     if(formIphoneModelo.ShowDialog(this) == DialogResult.Yes)
                     {
                         formIphoneModelo.Dispose();
-                        FormProdutoDefeito formProdutoDefeito = new FormProdutoDefeito(formIphoneModelo.SelecionadoIphone);
-                        formProdutoDefeito.ShowDialog(this);
-                        formProdutoDefeito.Dispose();
+                        FormServico formServico = new FormServico(infoCliente, formIphoneModelo.SelecionadoIphone);
+                        formServico.ShowDialog(this);
+                        formServico.Dispose();
                     }
                 }
 
@@ -466,7 +466,7 @@ namespace WinForms
 
             Form1.encerrarThread = true;
 
-            if (idSave > 0)
+            if (idSave > 0 && modSave != 0)
                 FormMessage.ShowMessegeInfo("Registro salvo com sucesso!");
         }
 

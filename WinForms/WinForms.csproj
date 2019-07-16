@@ -662,6 +662,7 @@
     <None Include="Resources\SP727-iphone6s-plus-gold-select-2015.png" />
     <None Include="Resources\icons8_iPhone_32.png" />
     <None Include="Resources\icons8_iMac_32.png" />
+    <None Include="Resources\icons8_Smartphone_Tablet_32.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

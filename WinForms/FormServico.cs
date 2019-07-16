@@ -24,13 +24,13 @@ namespace WinForms
         FuncInfo responsavel;
         FuncColecao colecaofunc;
         ServicoColecao colecaoServico;
+        IphoneCelularInfo infoCelular;
+
         ClienteNegocios negociosCliente = new ClienteNegocios(Form1.Empresa.empconexao);
         ServicoNegocio negocioServ = new ServicoNegocio(Form1.Empresa.empconexao);
         FuncNegocios negocioFunc = new FuncNegocios(Form1.Empresa.empconexao);
 
         int idSave;
-        int eletro = 0;
-        int tipo = 0;
         bool saved; //confirma se a OS foi salva, para quando fechar a janela atualizar a lista
 
         public FormServico(ClienteInfo cliente)
@@ -39,6 +39,15 @@ namespace WinForms
             infoCliente = cliente;
             PreencherForm();
         }
+
+        public FormServico(ClienteInfo cliente, IphoneCelularInfo celular)
+        {
+            Inicializar();
+            infoCliente = cliente;
+            infoCelular = celular;
+            PreencherForm();
+        }
+
         public FormServico()
         {
             Inicializar();
@@ -102,15 +111,15 @@ namespace WinForms
 
         private void buttonFechar_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.Cancel;
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            AbrirEletro();
+            AbrirDefeito();
         }
 
-        private void AbrirEletro()
+        private void AbrirDefeito()
         {
             FormProdutoDefeito formProdutoDefeito = new FormProdutoDefeito(infoCliente);
             formProdutoDefeito.ShowDialog(this);
@@ -118,10 +127,10 @@ namespace WinForms
 
             if (formProdutoDefeito.DialogResult == DialogResult.Yes)
             {
-                textBoxDescricao.Text = formProdutoDefeito.desc[0];
-                textBoxDefeito.Text = formProdutoDefeito.desc[1];
-                eletro = Convert.ToInt32(formProdutoDefeito.desc[2]);
-                tipo = Convert.ToInt32(formProdutoDefeito.desc[3]);
+                //textBoxDescricao.Text = formProdutoDefeito.desc[0];
+                //textBoxDefeito.Text = formProdutoDefeito.desc[1];
+                //eletro = Convert.ToInt32(formProdutoDefeito.desc[2]);
+                //tipo = Convert.ToInt32(formProdutoDefeito.desc[3]);
                 textBoxObs.Select();
                 buttonSalvar.Enabled = false;
                 buttonAddServico.Enabled = true;
@@ -300,11 +309,10 @@ namespace WinForms
 
         private void FrmServico_Load(object sender, EventArgs e)
         {
-            textBoxTaxa.Text = "40.00";
             buttonCliente.Select();
 
             if (infoCliente != null)
-                AbrirEletro();
+                AbrirDefeito();
         }
 
         private void buttonBuscarTec_Click(object sender, EventArgs e)
