@@ -15,11 +15,12 @@ namespace WinForms
     public partial class FormOnline : Form
     {
         Thread newThread;
+        OnlineNegocio negocioOnline;
         UserNegocio userNegocio = new UserNegocio(Form1.Empresa.empconexao);
         UserInfo userConversa;
         DateTime tempo = DateTime.Now;
         DateTime tempo1;
-        ChatOnlineInfo chat;
+        ChatOnlineInfo infoChat;
         ChatOnlineColecao colecaoChat;
         ChatOnlineColecao chatOnlineColecao;
         UserLoginColecao userOnlineColecao;
@@ -30,7 +31,8 @@ namespace WinForms
         public FormOnline()
         {
             InitializeComponent();
-            Form1.Login = userNegocio.ConsultarUserLogin(Form1.Login.loginid);
+            negocioOnline = new OnlineNegocio(Form1.Empresa.empconexao);
+            Form1.Login = negocioOnline.ConsultarUserLogin(Form1.Login.loginid);
             idLogado = Form1.Login.loginiduser;
         }
 
@@ -48,25 +50,39 @@ namespace WinForms
             if (min.Seconds > 10)
             {
                 tempo = DateTime.Now;
-                userOnlineColecao = userNegocio.ConsultarUserOnline();
-                chatOnlineColecao = userNegocio.ConsultarChatMensagemNova(idLogado);
+                negocioOnline = new OnlineNegocio(Form1.Empresa.empconexao);
+                userOnlineColecao = negocioOnline.ConsultarUserOnline();
+                negocioOnline = new OnlineNegocio(Form1.Empresa.empconexao);
+                chatOnlineColecao = negocioOnline.ConsultarChatMensagemNova(idLogado);
             }
         }
 
         private void NovaMensagemChat()
         {
+            if (infoChat != null)
+            {
+                negocioOnline = new OnlineNegocio(Form1.Empresa.empconexao);
+                negocioOnline.InsertChat(infoChat);
+                infoChat = null;
+            }
+
             ChatOnlineInfo chatOn = new ChatOnlineInfo
             {
                 chatident = ChatIdent(idchat, idLogado),
                 chatidrecebe = idLogado
             };
-             ChatOnlineColecao chat = userNegocio.ConsultarChatNova(chatOn);
+
+            negocioOnline = new OnlineNegocio(Form1.Empresa.empconexao);
+            ChatOnlineColecao chat = negocioOnline.ConsultarChatNova(chatOn);
 
             if (chat != null)
             {
-                dataGridViewChat.DataSource = userNegocio.ConsultarChatOnline(ChatIdent(idchat, idLogado));
+                negocioOnline = new OnlineNegocio(Form1.Empresa.empconexao);
+                colecaoChat = negocioOnline.ConsultarChatOnline(ChatIdent(idchat, idLogado));
                 dataGridViewChat.ClearSelection();
-                userNegocio.UpdateChatMessageLida(ChatIdent(idchat, idLogado), idLogado);
+
+                negocioOnline = new OnlineNegocio(Form1.Empresa.empconexao);
+                negocioOnline.UpdateChatMessageLida(ChatIdent(idchat, idLogado), idLogado);
             }
         }
 
@@ -82,7 +98,6 @@ namespace WinForms
                         loginColecao.Add(log);
                 }
                 dataGridViewOnline.DataSource = loginColecao;
-                dataGridViewChat.Refresh();
                 dataGridViewOnline.ClearSelection();
             }
             else
@@ -90,6 +105,7 @@ namespace WinForms
 
 
             PreencherGridNovaMessage();
+            GridChat();
         }
 
         private void PreencherGridNovaMessage()
@@ -128,10 +144,14 @@ namespace WinForms
 
         private void GridChat()
         {
-            dataGridViewChat.DataSource = colecaoChat;
-            dataGridViewChat.ClearSelection();
+            if (this.Width > 215)
+            {
+                dataGridViewChat.DataSource = colecaoChat;
+                dataGridViewChat.ClearSelection();
 
-            userNegocio.UpdateChatMessageLida(ChatIdent(idchat,idLogado), idLogado);
+                negocioOnline = new OnlineNegocio(Form1.Empresa.empconexao);
+                negocioOnline.UpdateChatMessageLida(ChatIdent(idchat, idLogado), idLogado);
+            }
         }
 
         private string ChatIdent(int um, int dois)
@@ -176,9 +196,8 @@ namespace WinForms
         {
             userConversa = userNegocio.ConsultarUsuarioId(idchat);
             labelNome.Text = userConversa.usenome;
-            colecaoChat = userNegocio.ConsultarChatOnline(ChatIdent(idLogado, userConversa.useid));
             GridChat();
-            chat = null;
+            infoChat = null;
             textBoxMessage.Clear();
             textBoxMessage.Select();
             AbrirChat();
@@ -218,7 +237,7 @@ namespace WinForms
         {
             if (!string.IsNullOrEmpty(textBoxMessage.Text))
             {
-                chat = new ChatOnlineInfo
+                infoChat = new ChatOnlineInfo
                 {
                     chatident = ChatIdent(idLogado, userConversa.useid),
                     chatidenvio = idLogado,
@@ -226,12 +245,6 @@ namespace WinForms
                     chatmessage = textBoxMessage.Text,
                 };
 
-                if (chat != null)
-                    userNegocio.InsertChat(chat);
-
-                colecaoChat = userNegocio.ConsultarChatOnline(ChatIdent(idLogado,userConversa.useid));
-                GridChat();
-                chat = null;
                 textBoxMessage.Clear();
                 textBoxMessage.Select();
             }

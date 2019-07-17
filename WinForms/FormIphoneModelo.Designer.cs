@@ -113,8 +113,10 @@
             // 
             // textBoxDetalhes
             // 
+            this.textBoxDetalhes.BackColor = System.Drawing.Color.Gray;
             this.textBoxDetalhes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDetalhes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDetalhes.ForeColor = System.Drawing.Color.White;
             this.textBoxDetalhes.Location = new System.Drawing.Point(2, 287);
             this.textBoxDetalhes.Multiline = true;
             this.textBoxDetalhes.Name = "textBoxDetalhes";
@@ -127,6 +129,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(2, 268);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
@@ -157,8 +160,10 @@
             // 
             // textBoxDimensoes
             // 
+            this.textBoxDimensoes.BackColor = System.Drawing.Color.Gray;
             this.textBoxDimensoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDimensoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDimensoes.ForeColor = System.Drawing.Color.White;
             this.textBoxDimensoes.Location = new System.Drawing.Point(222, 203);
             this.textBoxDimensoes.Multiline = true;
             this.textBoxDimensoes.Name = "textBoxDimensoes";
@@ -192,6 +197,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(222, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
@@ -201,6 +207,7 @@
             // labelNumMod
             // 
             this.labelNumMod.AutoSize = true;
+            this.labelNumMod.ForeColor = System.Drawing.Color.White;
             this.labelNumMod.Location = new System.Drawing.Point(222, 67);
             this.labelNumMod.Name = "labelNumMod";
             this.labelNumMod.Size = new System.Drawing.Size(45, 13);
@@ -211,6 +218,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(219, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 13);
@@ -220,6 +228,7 @@
             // labelCapacidade
             // 
             this.labelCapacidade.AutoSize = true;
+            this.labelCapacidade.ForeColor = System.Drawing.Color.White;
             this.labelCapacidade.Location = new System.Drawing.Point(222, 107);
             this.labelCapacidade.Name = "labelCapacidade";
             this.labelCapacidade.Size = new System.Drawing.Size(67, 13);
@@ -229,6 +238,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(222, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
@@ -250,6 +260,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
             this.labelTitle.Location = new System.Drawing.Point(220, 3);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(97, 25);
@@ -716,9 +727,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(158, 17);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(104, 13);
+            this.label13.Size = new System.Drawing.Size(123, 13);
             this.label13.TabIndex = 0;
             this.label13.Text = "Selecione o Modelo:";
             // 
@@ -753,6 +766,7 @@
             // labelBarra
             // 
             this.labelBarra.AutoSize = true;
+            this.labelBarra.ForeColor = System.Drawing.Color.White;
             this.labelBarra.Location = new System.Drawing.Point(9, 423);
             this.labelBarra.Name = "labelBarra";
             this.labelBarra.Size = new System.Drawing.Size(71, 13);
@@ -773,6 +787,7 @@
             this.groupBoxAparelho.Controls.Add(this.radioButton2);
             this.groupBoxAparelho.Controls.Add(this.radioButtonIphone);
             this.groupBoxAparelho.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxAparelho.ForeColor = System.Drawing.Color.White;
             this.groupBoxAparelho.Location = new System.Drawing.Point(12, 12);
             this.groupBoxAparelho.Name = "groupBoxAparelho";
             this.groupBoxAparelho.Size = new System.Drawing.Size(140, 42);
@@ -808,6 +823,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1086, 475);
             this.Controls.Add(this.groupBoxAparelho);
             this.Controls.Add(this.labelBarra);

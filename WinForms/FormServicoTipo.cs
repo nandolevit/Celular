@@ -21,7 +21,7 @@ namespace WinForms
             FormFormat formFormat = new FormFormat(this);
             formFormat.formatar();
             this.FormBorderStyle = FormBorderStyle.None;
-            this.KeyPreview = true;
+            //this.KeyPreview = true;
         }
 
         private void ButtonCelular_Click(object sender, EventArgs e)
@@ -44,8 +44,9 @@ namespace WinForms
             this.DialogResult = DialogResult.OK;
         }
 
-        private void ButtonNotebook_KeyDown(object sender, KeyEventArgs e)
+        private void FormServicoTipo_KeyDown(object sender, KeyEventArgs e)
         {
+
             switch (e.KeyCode)
             {
                 case Keys.F1:

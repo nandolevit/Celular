@@ -50,7 +50,6 @@
             this.buttonNotebook.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonNotebook.UseVisualStyleBackColor = false;
             this.buttonNotebook.Click += new System.EventHandler(this.ButtonNotebook_Click);
-            this.buttonNotebook.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ButtonNotebook_KeyDown);
             // 
             // buttonCelular
             // 
@@ -94,6 +93,7 @@
             this.KeyPreview = true;
             this.Name = "FormServicoTipo";
             this.Text = "FormServicoTipo";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormServicoTipo_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

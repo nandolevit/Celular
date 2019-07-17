@@ -38,7 +38,7 @@ namespace WinForms
         private void AbrirFoto()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png|All Files(*.*)|*.*";
+            openFileDialog.Filter = "PNG Files(*.png)|*.png|All Files(*.*)|*.*";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {

@@ -15,6 +15,7 @@ namespace WinForms
         UserNegocio userNegocio = new UserNegocio(Form1.Empresa.empconexao);
         EmpresaNegocios empresaNegocios = new EmpresaNegocios(Form1.Empresa.empconexao);
         UnidadeColecao unidadeColecao = new UnidadeColecao();
+        OnlineNegocio negocioOnline = new OnlineNegocio(Form1.Empresa.empconexao);
 
         public AccessLogin(string empacess)
         {
@@ -39,7 +40,7 @@ namespace WinForms
 
                         if (Form1.Offline == false)
                         {
-                            Form1.Login.loginid = userNegocio.InsertUserLogin(userInfo);
+                            Form1.Login.loginid = negocioOnline.InsertUserLogin(userInfo);
                         }
 
                         return 1;

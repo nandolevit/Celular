@@ -50,6 +50,7 @@ namespace WinForms
         Thread threadLogin;
         CaixaNegocios caixaNegocios;
         SerializarNegocios serializarNegocios = new SerializarNegocios(Caminho);
+        OnlineNegocio negocioOnline;
         AccessLogin accessLogin;
         UnidadeInfo unidadeInfo;
 
@@ -395,6 +396,7 @@ namespace WinForms
         {
             userNegocio = new UserNegocio(Empresa.empconexao);
             negocioEmp = new EmpresaNegocios(Form1.Empresa.empconexao);
+            negocioOnline = new OnlineNegocio(Form1.Empresa.empconexao);
 
             DateTime tempo = DateTime.Now;
             DateTime tempo1;
@@ -433,7 +435,7 @@ namespace WinForms
                             tempo = DateTime.Now;
 
                             if (Login != null)
-                                userNegocio.UpdateUserLogin(Login.loginid);
+                                negocioOnline.UpdateUserLogin(Login.loginid);
 
                             ConfiguracaoRede();
                             negocioEmp.UpdateComputadorLog(Computer);

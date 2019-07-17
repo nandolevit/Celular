@@ -87,6 +87,7 @@
     <Compile Include="EstoqueNegocios.cs" />
     <Compile Include="FornecedorNegocios.cs" />
     <Compile Include="FuncNegocios.cs" />
+    <Compile Include="OnlineNegocio.cs" />
     <Compile Include="PagamentoNegocios.cs" />
     <Compile Include="PedidoNegocios.cs" />
     <Compile Include="ProdutoNegocios.cs" />
