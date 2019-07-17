@@ -78,6 +78,16 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxDesligar = new System.Windows.Forms.TextBox();
+            this.textBoxSilencioso = new System.Windows.Forms.TextBox();
+            this.textBoxBandeja = new System.Windows.Forms.TextBox();
+            this.textBoxVolume = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.groupBoxDecricao.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -86,6 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxDefeito
@@ -199,6 +211,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(12, 156);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -625,6 +638,116 @@
             this.buttonFechar.UseVisualStyleBackColor = true;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label18);
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.textBoxVolume);
+            this.tabPage4.Controls.Add(this.textBoxBandeja);
+            this.tabPage4.Controls.Add(this.textBoxSilencioso);
+            this.tabPage4.Controls.Add(this.textBoxDesligar);
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.pictureBox4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(812, 409);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Botões";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(806, 403);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(15, 63);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(108, 13);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Tocar/Silencioso:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(326, 17);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(83, 13);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Liga/Desliga:";
+            // 
+            // textBoxDesligar
+            // 
+            this.textBoxDesligar.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxDesligar.Location = new System.Drawing.Point(329, 33);
+            this.textBoxDesligar.Multiline = true;
+            this.textBoxDesligar.Name = "textBoxDesligar";
+            this.textBoxDesligar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxDesligar.Size = new System.Drawing.Size(296, 63);
+            this.textBoxDesligar.TabIndex = 12;
+            // 
+            // textBoxSilencioso
+            // 
+            this.textBoxSilencioso.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxSilencioso.Location = new System.Drawing.Point(18, 79);
+            this.textBoxSilencioso.Multiline = true;
+            this.textBoxSilencioso.Name = "textBoxSilencioso";
+            this.textBoxSilencioso.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSilencioso.Size = new System.Drawing.Size(296, 63);
+            this.textBoxSilencioso.TabIndex = 13;
+            // 
+            // textBoxBandeja
+            // 
+            this.textBoxBandeja.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxBandeja.Location = new System.Drawing.Point(491, 283);
+            this.textBoxBandeja.Multiline = true;
+            this.textBoxBandeja.Name = "textBoxBandeja";
+            this.textBoxBandeja.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxBandeja.Size = new System.Drawing.Size(296, 63);
+            this.textBoxBandeja.TabIndex = 14;
+            // 
+            // textBoxVolume
+            // 
+            this.textBoxVolume.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxVolume.Location = new System.Drawing.Point(44, 300);
+            this.textBoxVolume.Multiline = true;
+            this.textBoxVolume.Name = "textBoxVolume";
+            this.textBoxVolume.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxVolume.Size = new System.Drawing.Size(296, 63);
+            this.textBoxVolume.TabIndex = 15;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(488, 267);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(86, 13);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "Bandeja Chip:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(41, 284);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(160, 13);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "Aumentar/Diminuir Volume:";
+            // 
             // FormProdutoDefeito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,6 +775,9 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,5 +833,15 @@
         private System.Windows.Forms.Button buttonFechar;
         private System.Windows.Forms.TextBox textBoxObs;
         private System.Windows.Forms.Label labelObs;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBoxVolume;
+        private System.Windows.Forms.TextBox textBoxBandeja;
+        private System.Windows.Forms.TextBox textBoxSilencioso;
+        private System.Windows.Forms.TextBox textBoxDesligar;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

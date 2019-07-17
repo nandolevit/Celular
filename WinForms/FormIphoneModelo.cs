@@ -45,6 +45,7 @@ namespace WinForms
             InitializeComponent();
             FormFormat formFormat = new FormFormat(this);
             formFormat.formatar();
+            this.FormBorderStyle = FormBorderStyle.None;
             this.AcceptButton = buttonSalvar;
 
             comboBoxModelo.ValueMember = "iphmodid";

@@ -14,6 +14,7 @@ namespace WinForms
 {
     public partial class FormOnline : Form
     {
+        Thread newThread;
         UserNegocio userNegocio = new UserNegocio(Form1.Empresa.empconexao);
         UserInfo userConversa;
         DateTime tempo = DateTime.Now;
@@ -21,6 +22,7 @@ namespace WinForms
         ChatOnlineInfo chat;
         ChatOnlineColecao colecaoChat;
         ChatOnlineColecao chatOnlineColecao;
+        UserLoginColecao userOnlineColecao;
         int idLogado;
         int idchat;
         bool chatAbeto;
@@ -39,22 +41,15 @@ namespace WinForms
             TimeSpan min = tempo1 - tempo;
 
             if (chatAbeto)
-            {
                 if (min.Seconds > 1)
-                {
                     if (userConversa != null)
-                    {
                         NovaMensagemChat();
-                    }
-                }
-            }
 
             if (min.Seconds > 10)
             {
                 tempo = DateTime.Now;
-
-                VerOnline();
-                PreencherGridNovaMessage();
+                userOnlineColecao = userNegocio.ConsultarUserOnline();
+                chatOnlineColecao = userNegocio.ConsultarChatMensagemNova(idLogado);
             }
         }
 
@@ -77,7 +72,6 @@ namespace WinForms
 
         private void VerOnline()
         {
-            UserLoginColecao userOnlineColecao = userNegocio.ConsultarUserOnline();
             UserLoginColecao loginColecao = new UserLoginColecao();
 
             if (userOnlineColecao != null)
@@ -93,10 +87,13 @@ namespace WinForms
             }
             else
                 dataGridViewOnline.DataSource = null;
+
+
+            PreencherGridNovaMessage();
         }
+
         private void PreencherGridNovaMessage()
         {
-            chatOnlineColecao = userNegocio.ConsultarChatMensagemNova(idLogado);
 
             if (chatOnlineColecao != null)
             {
@@ -108,10 +105,7 @@ namespace WinForms
         }
         private void timerOnline_Tick(object sender, EventArgs e)
         {
-
-            if (Form1.ConectedSystem)
-                OnlineUserLogin();
-
+            VerOnline();
         }
 
         private void FormOnline_Load(object sender, EventArgs e)
@@ -120,9 +114,17 @@ namespace WinForms
             dataGridViewChat.AutoGenerateColumns = false;
             dataGridViewChatNovaMessage.AutoGenerateColumns = false;
             VerOnline();
+
+            newThread = new Thread(Executar);
+            newThread.Start();
         }
 
-        
+        private void Executar()
+        {
+            while (true)
+                if (Form1.ConectedSystem)
+                    OnlineUserLogin();
+        }
 
         private void GridChat()
         {
@@ -358,6 +360,12 @@ namespace WinForms
                     }
                 }
             }
+        }
+
+        private void FormOnline_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (newThread.ThreadState == ThreadState.Running)
+                newThread.Abort();
         }
     }
 }

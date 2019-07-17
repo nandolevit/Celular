@@ -21,6 +21,7 @@ namespace WinForms
             FormFormat formFormat = new FormFormat(this);
             formFormat.formatar();
             this.FormBorderStyle = FormBorderStyle.None;
+            this.KeyPreview = true;
         }
 
         private void ButtonCelular_Click(object sender, EventArgs e)

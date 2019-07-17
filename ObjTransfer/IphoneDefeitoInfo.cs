@@ -26,6 +26,10 @@ namespace ObjTransfer
         public string iphdefcamtraseira { get; set; }
         public string iphdefmicrofonetraseiro { get; set; }
         public string iphdefflash { get; set; }
+        public string iphdefvolume { get; set; }
+        public string iphdefbandeja { get; set; }
+        public string iphdefdesligar { get; set; }
+        public string iphdefsilencioso { get; set; }
 
         public override string ToString()
         {
@@ -44,7 +48,11 @@ namespace ObjTransfer
             descricao += string.IsNullOrEmpty(iphdefcarcaca) ? "" : "**Estado da carcaça: " + iphdefcarcaca + Environment.NewLine;
             descricao += string.IsNullOrEmpty(iphdefcamtraseira) ? "" : "**Câmera traseira: " + iphdefcamtraseira + Environment.NewLine;
             descricao += string.IsNullOrEmpty(iphdefmicrofonetraseiro) ? "" : "**Microfone traseiro: " + iphdefmicrofonetraseiro + Environment.NewLine;
-            descricao += string.IsNullOrEmpty(iphdefflash) ? "" : "**Flash: " + iphdefflash;
+            descricao += string.IsNullOrEmpty(iphdefflash) ? "" : "**Flash: " + iphdefflash + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefvolume) ? "" : "**Botão de Volume: " + iphdefvolume + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefbandeja) ? "" : "**Bandeja de Chip: " + iphdefbandeja + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefdesligar) ? "" : "**Botão Ligar/Desligar: " + iphdefdesligar + Environment.NewLine;
+            descricao += string.IsNullOrEmpty(iphdefsilencioso) ? "" : "**Botão Tocar/Silencioso: " + iphdefsilencioso + Environment.NewLine;
 
             return descricao;
         }

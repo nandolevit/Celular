@@ -43,6 +43,10 @@ namespace Negocios
                 accessDbMySql.AddParametrosMySql("@parafuso", defeito.iphdefparafuso);
                 accessDbMySql.AddParametrosMySql("@sensorprox", defeito.iphdefsensorprox);
                 accessDbMySql.AddParametrosMySql("@display", defeito.iphdeftouchdisplay);
+                accessDbMySql.AddParametrosMySql("@volume", defeito.iphdefvolume);
+                accessDbMySql.AddParametrosMySql("@silencioso", defeito.iphdefsilencioso);
+                accessDbMySql.AddParametrosMySql("@desligar", defeito.iphdefdesligar);
+                accessDbMySql.AddParametrosMySql("@bandeja", defeito.iphdefbandeja);
 
                 return accessDbMySql.ExecutarScalarMySql("spUpdateIphoneDefeito");
             }
@@ -72,6 +76,10 @@ namespace Negocios
                 accessDbMySql.AddParametrosMySql("@parafuso", defeito.iphdefparafuso);
                 accessDbMySql.AddParametrosMySql("@sensor", defeito.iphdefsensorprox);
                 accessDbMySql.AddParametrosMySql("@display", defeito.iphdeftouchdisplay);
+                accessDbMySql.AddParametrosMySql("@volume", defeito.iphdefvolume);
+                accessDbMySql.AddParametrosMySql("@silencioso", defeito.iphdefsilencioso);
+                accessDbMySql.AddParametrosMySql("@desligar", defeito.iphdefdesligar);
+                accessDbMySql.AddParametrosMySql("@bandeja", defeito.iphdefbandeja);
 
                 return accessDbMySql.ExecutarScalarMySql("spInsertIphoneDefeito");
             }

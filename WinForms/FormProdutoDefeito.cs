@@ -60,6 +60,7 @@ namespace WinForms
             InitializeComponent();
             FormFormat formFormat = new FormFormat(this);
             formFormat.formatar();
+            this.FormBorderStyle = FormBorderStyle.None;
             this.AcceptButton = buttonSalvar;
             textBoxCodProd.Select();
 
@@ -179,7 +180,11 @@ namespace WinForms
                 iphdefobs = textBoxObs.Text,
                 iphdefparafuso = textBoxParafuso.Text,
                 iphdefsensorprox = textBoxSensor.Text,
-                iphdeftouchdisplay = textBoxDisplay.Text
+                iphdeftouchdisplay = textBoxDisplay.Text,
+                iphdefbandeja = textBoxBandeja.Text,
+                iphdefdesligar = textBoxDesligar.Text,
+                iphdefsilencioso = textBoxSilencioso.Text,
+                iphdefvolume = textBoxVolume.Text
             };
         }
 
